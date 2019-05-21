@@ -27,7 +27,7 @@
                 },{
                     pattern: /^((\+)?[1-9]{1,2})?([-\s\.])?((\(\d{1,4}\))|\d{1,4})(([-\s\.])?[0-9]{1,12}){1,2}$/,
                     msg: Hypr.getLabel("invalidPhone")
-                }] 
+                }]
             }
         }),
 
@@ -47,7 +47,7 @@
                 },
                 address2: {
                     fn: "address2Validation"
-                },                
+                },
                 cityOrTown: {
                     required: true,
                     msg: Hypr.getLabel("cityMissing")
@@ -71,13 +71,18 @@
                     pattern: /(^\d{5}$)|(^\d{5}-\d{4}$)/,
                     msg: Hypr.getLabel("invalidZipcode")
                 }]
+                },
+                addressType: {
+                    required: true,
+                    msg: Hypr.getLabel("addressTypeMissing")
+                }
             },
             address2Validation: function(){
                     if(this.get('address1')===this.get('address2')){
                         this.set('address2',null);
                     }
-                    return false; 
-            },            
+                    return false;
+            },
             requiresStateAndZip: function(value, attr) {
                 if ((this.get('countryCode') in countriesRequiringStateAndZip) && !value) return this.validation[attr.split('.').pop()].msg;
             },

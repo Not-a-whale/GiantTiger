@@ -26,6 +26,17 @@ define([
         if (path !== "") {
             updateFacetFilter(path);
         }
+        function updateUi(response) {
+          var url = response.canonicalUrl;
+          _$body.html(response.body);
+          if (url) _dispatcher.replace(url);
+
+          if (window.myStoreView) {
+              window.myStoreView.init();
+          }
+
+          _$body.removeClass('mz-loading');
+        }
         function showError(error) {
             // if (error.message === ROUTE_NOT_FOUND) {
             //     window.location.href = url;
@@ -88,6 +99,7 @@ define([
                 'click [data-mz-pagenumbers] a',
                 'click a[data-mz-facet-value]',
                 'click [data-mz-action="clearFacets"]',
+                'click [data-mz-action="filterMyStore"]',
                 'change input[data-mz-facet-value]',
                 'change [data-mz-value="pageSize"]',
                 'change [data-mz-value="sortBy"]'
@@ -147,7 +159,7 @@ define([
                             displayValue = displayValue.replace("[", "$").replace("]", "").replace(/to/gi, "-");
                         }
                         var filterKeyFormat=facetKey.replace('~','-');
-        
+
                         if(filterKeyFormat==='' && facetVal===''){
                             $('#filter-'+filterKeyFormat).find('.mz-clear-facet-section').addClass('hide');
                         }else{
@@ -290,7 +302,7 @@ define([
             var url= path.replace(new RegExp(facetVal+'\:(.*?)(,|&)', 'g'), '');
             if(url[url.length -1]==','){
                 url = url.replace(new RegExp(',$', 'g'), '\&');
-                
+
             }
             var parser = document.createElement('a');
             parser.href = url;

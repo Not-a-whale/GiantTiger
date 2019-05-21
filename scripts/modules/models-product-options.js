@@ -1,10 +1,10 @@
 define([
-	"modules/jquery-mozu", 
-	"underscore", 
-	"modules/backbone-mozu", 
-	"hyprlive",  
+	"modules/jquery-mozu",
+	"underscore",
+	"modules/backbone-mozu",
+	"hyprlive",
 	"modules/api",
-    "hyprlivecontext"], 
+    "hyprlivecontext"],
     function($, _, Backbone, Hypr, api, HyprLiveContext) {
     	function zeroPad(str, len) {
 	        str = str.toString();
@@ -83,7 +83,7 @@ define([
 	            }
 	        },
 	        handleInvalid: function(newValObj, opt) {
-	            if (this !== opt) {
+	            if (this !== opt && !newValObj.autoAddEnabled) {
 	                this.unset("value");
 	                _.each(this.get("values"), function(value) {
 	                    value.isSelected = false;

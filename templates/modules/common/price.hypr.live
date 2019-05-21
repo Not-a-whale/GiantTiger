@@ -7,6 +7,13 @@
     {% if model.priceType == "MAP" %}
     <div>add to cart to see final price</div>
     {% endif %}
+    {% if model.discount.discounts.length %}
+        <div>
+        {% for discount in model.discount.discounts %}
+            <span class="mz-price-discountname">{{discount.name}} &ndash; {{discount.impact|currency}}</span>
+        {% endfor %}
+        </div>
+    {% endif %}
 </span>
 <span class="is-ranged mz-price is-crossedout">
     {{model.price|currency}}
