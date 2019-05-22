@@ -809,10 +809,9 @@
   "loadGoogleFonts": [
     "Source Sans Pro"
   ],
-"locationInventoryFilterText": "Shop My Store",
-  "maxProductImageThumbnailSize": 90,
+  "locationInventoryFilterText": "Shop My Store",
   "maxFilterLocations": 50,
-  "maxProductImageThumbnailSize": 50,
+   "maxProductImageThumbnailSize": 50,
   "maxProductSummaryWords": 40,
   "maxRecentlyViewedItems": 5,
   "maxTopLevelNavItems": 8,

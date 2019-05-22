@@ -70,12 +70,7 @@
                 },{
                     pattern: /(^\d{5}$)|(^\d{5}-\d{4}$)/,
                     msg: Hypr.getLabel("invalidZipcode")
-                }]
-                },
-                addressType: {
-                    required: true,
-                    msg: Hypr.getLabel("addressTypeMissing")
-                }
+                }]                
             },
             address2Validation: function(){
                     if(this.get('address1')===this.get('address2')){

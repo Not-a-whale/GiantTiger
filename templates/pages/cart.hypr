@@ -22,7 +22,6 @@
 	{% include "modules/cart/cart-location-select" %}
 </div>
 <div class="mz-l-container">
-<<<<<<< HEAD
 	<div id="mz-discount-threshold-messages">
 		{% include "modules/cart/cart-discount-threshold-messages" with model=model %}
 	</div>

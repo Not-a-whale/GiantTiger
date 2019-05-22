@@ -26,17 +26,7 @@ define([
         if (path !== "") {
             updateFacetFilter(path);
         }
-        function updateUi(response) {
-          var url = response.canonicalUrl;
-          _$body.html(response.body);
-          if (url) _dispatcher.replace(url);
 
-          if (window.myStoreView) {
-              window.myStoreView.init();
-          }
-
-          _$body.removeClass('mz-loading');
-        }
         function showError(error) {
             // if (error.message === ROUTE_NOT_FOUND) {
             //     window.location.href = url;
@@ -188,6 +178,9 @@ define([
             if (url && url.substr(url.length - 2) === '&&')
                 url = url.substring(0, url.length - 1);
             _$body.html(response.body);
+              if (window.myStoreView) {
+                window.myStoreView.init();
+            }
             if (url) _dispatcher.replace(url);
             _$body.removeClass('mz-loading');
             InfiniteScroller.update();

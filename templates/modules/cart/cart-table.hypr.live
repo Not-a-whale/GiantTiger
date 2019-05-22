@@ -206,8 +206,7 @@
               {% endif %}
             {%endwith%}
           {% endif %}
-        {% endif %}
-    </div>
+        </div>
     <div>
       {% include "modules/cart/coupon-detail" %}
     </div>
