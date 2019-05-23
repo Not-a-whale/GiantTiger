@@ -23,7 +23,7 @@
                 {
                     "xtype": "mz-input-text",
                     "name": "categoryEntityName",
-                    "fieldLabel": "Category Entity Name"   
+                    "fieldLabel": "Category Entity Name"
                 },
                 {
                     "xtype": "mz-input-image",
@@ -34,6 +34,107 @@
                     "xtype": "mz-input-image",
                     "name": "globalPageHeaderLogoXS",
                     "fieldLabel": "Logo XS"
+                }
+            ]
+        },
+        {
+            "xtype": "panel",
+            "title": "Recaptcha",
+            "collapsed": false,
+            "items": [
+                {
+                    "xtype": "mz-input-checkbox",
+                    "name": "enableRecaptcha",
+                    "fieldLabel": "Enable Recaptcha"
+                },
+                {
+                    "xtype": "mz-input-text",
+                    "name": "recaptchaSiteKey",
+                    "fieldLabel": "Recaptcha Site Key"
+                },
+                {
+                    "xtype": "mz-input-text",
+                    "name": "__recaptchaSecrete",
+                    "fieldLabel": "Recaptcha Secret",
+                    "inputType": "password"
+                },
+                {
+                    "xtype": "mz-input-dropdown",
+                    "name": "recaptchaType",
+                    "fieldLabel": "Recaptcha Type",
+                    "allowBlank": false,
+                    "forceSelection": true,
+                    "store": [
+                        "Invisible",
+                        "I'm not a robot"
+                    ]
+                },
+                {
+                    "xtype": "mz-input-dropdown",
+                    "name": "recaptchaSize",
+                    "fieldLabel": "Recaptcha Size",
+                    "allowBlank": false,
+                    "forceSelection": true,
+                    "store": [
+                        "normal",
+                        "compact"
+                    ]
+                },
+                {
+                    "xtype": "mz-input-dropdown",
+                    "name": "recaptchaTheme",
+                    "fieldLabel": "Recaptcha Theme",
+                    "allowBlank": false,
+                    "forceSelection": true,
+                    "store": [
+                        "light",
+                        "dark"
+                    ]
+                },
+                {
+                    "xtype": "mz-input-dropdown",
+                    "name": "recaptchaBadgePosition",
+                    "fieldLabel": "Recaptcha Badge Position",
+                    "allowBlank": false,
+                    "forceSelection": true,
+                    "store": [
+                        "bottomright",
+                        "bottomleft",
+                        "inline"
+                    ]
+                }
+            ]
+        },
+        {
+            "xtype": "panel",
+            "title": "Filters",
+            "collapsed": false,
+            "items": [
+                {
+                    "xtype": "mz-input-checkbox",
+                    "name": "allowFilterByLocationInventory",
+                    "fieldLabel": "Allow Filter by Location Inventory"
+                },
+                                {
+                   "fieldLabel": "Max Number of Locations",
+                    "xtype": "mz-input-dropdown",
+                    "name": "maxFilterLocations",
+                    "allowBlank": false,
+                    "forceSelection": true,
+                    "store": [
+                        50,
+                        100,
+                        150,
+                        200
+                    ]
+                },
+                {
+                    "fieldLabel": "Filter Label Text (limit 30 characters)",
+                    "xtype": "mz-input-text",
+                    "name": "locationInventoryFilterText",
+                    "allowBlank": true,
+                    "allowOnlyWhitespace": true,
+                    "maxValue": 30
                 }
             ]
         },
@@ -106,7 +207,7 @@
                     "xtype": "mz-input-number",
                     "name": "allProductsCategoryId",
                     "fieldLabel": "Enter CategoryId which is having all products"
-                }                
+                }
             ]
         },
         {
@@ -222,9 +323,9 @@
                     "fieldLabel": "Enable XS Mini footer",
                     "xtype": "mz-input-checkbox",
                     "name": "footerEnableMini"
-                }                              
+                }
             ]
-        },         
+        },
         {
             "xtype": "panel",
             "title": "Global Cart",
@@ -233,7 +334,7 @@
                 {
                     "fieldLabel": "Pick an image for Basket",
                     "xtype": "mz-input-image",
-                    "name": "globalCartEmptyBasketFooter" 
+                    "name": "globalCartEmptyBasketFooter"
                 },
                 {
                     "fieldLabel": "Basket kicker link",
@@ -254,12 +355,12 @@
                     "fieldLabel": "Enable Save Cart",
                     "xtype": "mz-input-checkbox",
                     "name": "globalCartEnableSaveCart"
-                },                
+                },
                 {
                     "fieldLabel": "Maximum number of items to show in global Cart",
                     "xtype": "mz-input-number",
                     "name": "globalCartMaxItemCount"
-                }, 
+                },
                 {
                     "fieldLabel": "Max width of global Cart item image",
                     "xtype": "mz-input-number",
@@ -274,7 +375,7 @@
                     "fieldLabel": "Show Subtotal",
                     "xtype": "mz-input-checkbox",
                     "name": "globalCartShowSubtotal"
-                }                            
+                }
             ]
         },
         {
@@ -308,9 +409,9 @@
                     "xtype": "mz-input-number",
                     "name": "maxRecentlyViewedItems",
                     "fieldLabel": "Maximum number of Recently Viewed Items supported"
-                }                                                
+                }
             ]
-        },{            
+        },{
             "xtype": "panel",
             "title": "Form Validations",
             "collapsed": false,
@@ -393,7 +494,7 @@
                     "fieldLabel": "Gift Message Length",
                     "xtype": "mz-input-number",
                     "name": "checkoutGiftMessageLength"
-                },                
+                },
                 {
                     "fieldLabel": "Checkout Comments Length",
                     "xtype": "mz-input-number",
@@ -536,7 +637,7 @@
                     "fieldLabel": "Also change alternate images"
                 }
             ]
-        },        
+        },
         {
             "xtype": "panel",
             "title": "Category Filters",
@@ -600,7 +701,7 @@
                     "xtype": "mz-input-text",
                     "name": "pdpMainImageMaxWidth",
                     "fieldLabel": "Main Image Max Width"
-                }, 
+                },
                 {
                     "xtype": "mz-input-text",
                     "name": "pdpAltImageName",
@@ -708,6 +809,33 @@
                     "xtype": "mz-input-text",
                     "name": "oneSizeProductType",
                     "fieldLabel": "One Size Product Type"
+                }
+            ]
+        },
+        {
+            "xtype": "panel",
+            "title": "Border Configuration",
+            "collapsed": false,
+            "items": [
+                {
+                    "xtype": "mz-input-checkbox",
+                    "name": "enableborderFree",
+                    "fieldLabel": "Enable Border Free"
+                },
+                {
+                    "xtype": "mz-input-text",
+                    "name": "merchantId",
+                    "fieldLabel": "MerchantId"
+                },
+                {
+                    "xtype": "mz-input-text",
+                    "name": "borderFreeUsername",
+                    "fieldLabel": "Username for BorderFree"
+                },
+                {
+                    "xtype": "mz-input-text",
+                    "name": "borderFreePassword",
+                    "fieldLabel": "Password for BorderFree"
                 }
             ]
         }

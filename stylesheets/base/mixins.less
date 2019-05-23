@@ -92,9 +92,9 @@
 	border-bottom-left-radius:          @bottomleft;
 	border-top-left-radius:             @topleft;
 
-	-moz-background-clip:    padding; 
-	-webkit-background-clip: padding-box; 
-	background-clip:         padding-box; 
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
 }
 
 .opacity (@opacity: 0.5) {
@@ -118,7 +118,7 @@
 	background: -o-radial-gradient(center, ellipse cover,  @startColor 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
 	background: -ms-radial-gradient(center, ellipse cover,  @startColor 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
 	background: radial-gradient(ellipse at center,  @startColor 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
-	
+
 }
 
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease, @direction: normal, @iteration-count: 1, @fill-mode: none, @play-state: running) {
@@ -129,10 +129,10 @@
 }
 
 .transition (@transition) {
-	-webkit-transition: @transition;  
+	-webkit-transition: @transition;
 	-moz-transition:    @transition;
-	-ms-transition:     @transition; 
-	-o-transition:      @transition;  
+	-ms-transition:     @transition;
+	-o-transition:      @transition;
 }
 .transition-delay (...) {
     -webkit-transition-delay: @arguments;
@@ -206,6 +206,7 @@
 	-ms-transform-origin:     @x @y;
 	-o-transform-origin:      @x @y;
 }
+
 .fontRegular() {
 	font-family: @fontFamily;
     font-weight: 300;
@@ -240,7 +241,7 @@
 }
 
 .formCommonSettings() {
-	outline: none;	
+	outline: none;
     padding: 6px 7px 4px;
 	font-size: @fontSize;
 	line-height:normal;
@@ -344,4 +345,8 @@
         color: @colorGray;
         text-decoration: none;
     }
+}
+
+.clear {
+	clear:both;
 }

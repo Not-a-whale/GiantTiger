@@ -80,15 +80,32 @@
         float:left;
         text-align:left;
     }
-    
+
     .mz-carttable-checkout-couponcode{
-        float:left; 
+        float:left;
         text-align:left;
+
+    .mz-carttable-thirdpartypayment {
+           margin-bottom:10px;
+    }
+
+    .mz-carttable-item-autoAddDiscount {
+        padding: 6px 10px;
+        background: @warningBackground;
+        .mz-carttable-item-autoAddDiscount-actions {
+            float: right;
+            margin-right: 15px;
+        }
     }
 }
 
 .mz-carttable-button-active {
     width: 230px;
+}
+.mz-table-error {
+    font-size: @fontSizeSmall;
+    color: @unavailableText;
+
 }
 
 
@@ -135,5 +152,5 @@
     color: #ccc;
     margin-left: 30px;
   }
-
+}
 }

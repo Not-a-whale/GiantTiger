@@ -1,7 +1,18 @@
-﻿define(['modules/backbone-mozu', 'underscore', 'modules/models-address', 'modules/models-orders', 'modules/models-paymentmethods', 'modules/models-product', 'modules/models-returns', 'hyprlive','hyprlivecontext','modules/block-ui','modules/backbone-mozu'], function (Backbone, _, AddressModels, OrderModels, PaymentMethods, ProductModels, ReturnModels, Hypr,HyprLiveContext,blockUiLoader,$) {
+﻿define(['modules/backbone-mozu',
+        'underscore',
+        'modules/models-address',
+        'modules/models-orders',
+        'modules/models-paymentmethods',
+        'modules/models-product',
+        'modules/models-returns',
+        'hyprlive',
+        'hyprlivecontext',
+        'modules/block-ui',
+        'modules/backbone-mozu',
+        'modules/models-b2b-account'],
+function (Backbone, _, AddressModels, OrderModels, PaymentMethods, ProductModels, ReturnModels, Hypr,HyprLiveContext,blockUiLoader,$, B2BAccountModels) {
 
-
-    var pageContext = require.mozuData('pagecontext'),
+  var pageContext = require.mozuData('pagecontext'),
         validShippingCountryCodes,
         validBillingCountryCodes,
         validShippingAndBillingCountryCodes;
@@ -77,6 +88,10 @@
 
     var CustomerContact = Backbone.MozuModel.extend({
         mozuType: 'contact',
+        requiredBehaviors: [1002],
+        defaults: {
+            userId: require.mozuData('user').userId
+        },
         relations: {
             address: AddressModels.StreetAddress,
             phoneNumbers: AddressModels.PhoneNumbers
@@ -186,7 +201,7 @@
             var self = this,
                 editingContact = this,
                 apiContact;
-            
+
             if (options && options.forceIsValid) {
                 editingContact.set('address.isValidated', true);
             }
@@ -227,11 +242,11 @@
                                         headers: apiData.headers,
                                         method: 'PUT',
                                         data:data
-                                    }); 
+                                    });
 
                                 }
                             }
-                        });                        
+                        });
                     }
                     return $.ajax({
                         url: '/api/platform/entitylists/requestCatalog%40ng/entities/?responseFields=',
@@ -272,11 +287,11 @@
                         //console.log("Show API error", error);
                     });
                     // Return the Promise so caller can't change the Deferred
-                    return dfd.promise();     
+                    return dfd.promise();
 
                 }
             }
-        } 
+        }
     }),
 
     WishlistItem = Backbone.MozuModel.extend({
@@ -318,6 +333,13 @@
         },
         relations: {
             attributes: Backbone.Collection.extend({
+                model: CustomerAttribute
+            }),
+            // We set this relationship so that b2battributes, when assigned, can
+            // function like a backbone collection. But it's only out of convenience that the model
+            // is named CustomerAttribute. This is NOT a collection of customer attributes. They are
+            // ACCOUNT attributes.
+            b2bAttributes: Backbone.Collection.extend({
                 model: CustomerAttribute
             }),
             contacts: Backbone.Collection.extend({
@@ -414,6 +436,7 @@
     }),
 
     CustomerCardWithContact = PaymentMethods.CreditCard.extend({
+
         validation: _.extend({
             contactId: {
                 fn: function(value, property, model) {
@@ -426,7 +449,7 @@
     }),
 
     EditableCustomer = Customer.extend({
-        
+
         handlesMessages: true,
         relations: _.extend({
             editingCard: CustomerCardWithContact,
@@ -453,6 +476,7 @@
                 editingContact: {}
             };
         },
+        helpers: ['isNonPurchaser'],
         initialize: function() {
             var self = this,
                 orderHistory = this.get('orderHistory'),
@@ -474,14 +498,21 @@
                 cust.getCards();
             }, self);
         },
+        isNonPurchaser: function() {
+            return (require.mozuData('user').behaviors.length) ? false : true;
+        },
         changePassword: function () {
             var self = this;
             self.validatePassword = true;
             if (this.validate('password') || this.validate('confirmPassword')) return false;
-            return this.apiChangePassword({
+            var changePasswordPayload = {
                 oldPassword: this.get('oldPassword'),
                 newPassword: this.get('password')
-            }).ensure(function () {
+            };
+            if (this.get('accountType') === 'B2B'){
+                changePasswordPayload.userId = this.get('userId');
+            }
+            return this.apiChangePassword(changePasswordPayload).ensure(function () {
                 self.validatePassword = false;
             });
         },
@@ -572,7 +603,7 @@
                 addr = editingContact.get("address");
             if (!this.validate("editingContact")) {
                 if(isAddressValidationEnabled && !addr.get('isValidated')){
-                    if(typeof(addr.apiModel.data.address1) === "undefined"){ 
+                    if(typeof(addr.apiModel.data.address1) === "undefined"){
                         addr.apiModel.data = addr.attributes;
                     }
                     if (!addr.get('candidateValidatedAddresses')) {
@@ -591,11 +622,11 @@
                                     }).then(function () {
                                         blockUiLoader.unblockUi();
                                         return apiContact;
-                                    }); 
+                                    });
                                 }
-                                else{                                
-                                    addr.set('candidateValidatedAddresses', resp.data.addressCandidates); 
-                                    blockUiLoader.unblockUi();                               
+                                else{
+                                    addr.set('candidateValidatedAddresses', resp.data.addressCandidates);
+                                    blockUiLoader.unblockUi();
                                 }
                             }
                         }, function (e) {
@@ -644,7 +675,7 @@
                     }).then(function() {
                         blockUiLoader.unblockUi();
                         return apiContact;
-                    });              
+                    });
                 }
             } else blockUiLoader.unblockUi();
         },
@@ -681,9 +712,24 @@
             delete j.oldPassword;
             return j;
         }
+    }),
+    B2BCustomerAccount = B2BAccountModels.b2bUser.extend({
+        toJSON: function (options) {
+            var j = Customer.prototype.toJSON.apply(this, arguments);
+            if (!options || !options.helpers)
+                delete j.customer;
+            delete j.password;
+            delete j.confirmPassword;
+            delete j.oldPassword;
+
+            j.accountId = j.id;
+            j.id = j.userId;
+            return j;
+        }
     });
 
     return {
+        B2BCustomer: B2BCustomerAccount,
         Contact: CustomerContact,
         Customer: Customer,
         EditableCustomer: EditableCustomer
