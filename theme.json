@@ -1233,6 +1233,79 @@
   ],
   "widgets": [
   {
+    "defaultConfig": {
+      "catalog": "[]"
+    },
+    "displayName": "Email Form",
+    "displayTemplate": "sendEmail/sendemail",
+    "editViewFields": [{ 
+        "name": "subject",
+        "fieldLabel": "Email Subject",
+        "xtype": "mz-input-text"
+      },
+      {
+        "name": "email_from",
+        "fieldLabel": "Email From",
+        "xtype": "mz-input-text"
+      },
+      {
+        "name": "email_cc",
+        "fieldLabel": "Email CC (use comma to separate few)",
+        "xtype": "mz-input-text"
+      },
+      {
+        "name": "hidden_form",
+        "fieldLabel": "Hide form from public part",
+        "xtype": "mz-input-checkbox"
+      },
+      {
+        "name": "form_html",
+        "fieldLabel": "Form HTML",
+        "xtype": "mz-input-code",
+        "width": "100%"
+      },
+      {
+        "name": "form_email_template",
+        "fieldLabel": "Form Email Template",
+        "xtype": "mz-input-code",
+        "width": "100%"
+      },
+      {
+        "name": "customClass",
+        "fieldLabel": "Custom Form Class",
+        "xtype": "mz-input-text"
+      },
+      {
+        "name": "customId",
+        "fieldLabel": "Custom Form ID",
+        "xtype": "mz-input-text"
+      },
+      {
+        "name": "form_success_message",
+        "fieldLabel": "Form Success Message",
+        "xtype": "mz-input-code",
+        "width": "100%"
+      },
+      {
+        "name": "form_error_message",
+        "fieldLabel": "Form Error Message",
+        "xtype": "mz-input-code",
+        "width": "100%"
+      },
+      {
+        "name": "customButtonValue",
+        "fieldLabel": "Custom Button Label",
+        "xtype": "mz-input-text"
+      }
+
+    ],
+    "icon": "/resources/admin/widgets/03_heading_p.png",
+    "id": "sendemail",
+    "validPageTypes": [
+      "*"
+    ]
+  },
+  {
     "id": "Image-video-slide_widget",
     "displayName": "Image-Video-Slider",
     "displayTemplate": "cms/image-video-slider",
