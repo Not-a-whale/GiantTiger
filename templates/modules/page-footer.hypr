@@ -9,7 +9,7 @@
 </div>
 <footer>
 	<div class="container">
-		<div class="row ">
+		<div class="row">
 			<div class="col-xs-12 col-sm-4 pull-right">
 				<div>
 					{% dropzone "email-signup-tag-line" scope="site" %}
@@ -31,12 +31,12 @@
 				<div class="social-links">
 					<div class="ml-footer-social-connect">Connect with us:</div>
 					<div>
-						<a title="Facebook" href="#" class="ml-icon ml-social-icon ml-icon-facebook">&nbsp;</a>
-						<a title="Twitter" href="#" class="ml-icon ml-social-icon ml-icon-twitter">&nbsp;</a>
-						<a title="Pintrest" href="#" class="ml-icon ml-social-icon ml-icon-pintrest">&nbsp;</a>
-						<a title="Google" href="#" class="ml-icon ml-social-icon ml-icon-google">&nbsp;</a>
-						<a title="Instagram" href="#" class="ml-icon ml-social-icon ml-icon-instagram">&nbsp;</a>
-						<a title="YouTube" href="#" class="ml-icon ml-social-icon ml-icon-youtube">&nbsp;</a>
+						<a title="Facebook" href="https://facebook.com" class="ml-icon ml-social-icon ml-icon-facebook" aria-label="Facebook link"></a>
+						<a title="Twitter" href="https://twitter.com" class="ml-icon ml-social-icon ml-icon-twitter" aria-label="Twitter link"></a>
+						<a title="Pintrest" href="https://pinterest.com" class="ml-icon ml-social-icon ml-icon-pintrest" aria-label="Pinterest link"></a>
+						<a title="Google" href="https://google.com" class="ml-icon ml-social-icon ml-icon-google" aria-label="Google link"></a>
+						<a title="Instagram" href="https://instagram.com" class="ml-icon ml-social-icon ml-icon-instagram" aria-label="Instagram link"></a>
+						<a title="YouTube" href="https://youtube.com" class="ml-icon ml-social-icon ml-icon-youtube" aria-label="YouTube link"></a>
 					</div>
 				</div>
 				<div class="ml-footer-phone-number">

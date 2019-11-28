@@ -1,4 +1,4 @@
-<nav class="ml-navbar-secondary">
+<nav class="ml-navbar-secondary" aria-label="Site navigation secondary (mobile)">
     <div class="container">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         {% partial_cache %}
@@ -9,7 +9,6 @@
                   <h4 class="panel-title text-uppercase">
                     <a role="button" {% if link.openInNewWindow %}target='_blank'{% endif %}
                       {% if link.items %} 
-                        target="_self"
                         class="collapsed"
                         data-toggle="collapse" data-parent="#accordion" data-target="#main-nav-{{link.categoryCode}}" aria-expanded="false" aria-controls="main-nav-{{link.categoryCode}}"
                       {% endif %}
@@ -46,15 +45,19 @@
                               </h4>
                             </div>
                             <div id="sub-nav-{{sublink.categoryCode}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="sub-nav-heading-{{sublink.categoryCode}}">
-                              <div class="panel-body"><ul>
-                                {% for subsublink in sublink.items %}
-                                  {% if not subsublink.isHidden and not subsublink.isEmpty %}
-                                    <li class="mz-sitenav-item">
-                                    <a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|replace(themeSettings.columnBreaker, "")|replace("_", " ")|safe }}</a>
-                                    </li>
-                                  {% endif %}
-                                {% endfor %}
-                              </ul></div>
+                              <div class="panel-body">
+                                {% if subsublink.length > 0 %}
+                                  <ul>
+                                    {% for subsublink in sublink.items %}
+                                      {% if not subsublink.isHidden and not subsublink.isEmpty %}
+                                        <li class="mz-sitenav-item">
+                                          <a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|replace(themeSettings.columnBreaker, "")|replace("_", " ")|safe }}</a>
+                                        </li>
+                                      {% endif %}
+                                    {% endfor %}
+                                  </ul>
+                                {% endif %}
+                              </div>
                             </div>
                           </div>
                         {% endif %}

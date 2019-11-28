@@ -43,8 +43,8 @@
         {% block meta-tags %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
-        <meta name="description" content="{{ PageContext.MetaDescription }}">
-        <meta name="keywords" content="{{ PageContext.MetaKeywords }}">
+        <meta name="description" content="{% if PageContext.MetaDescription %}{{ PageContext.MetaDescription }}{% else %}{% block title-tag-content %}{{ siteContext.generalSettings.websiteName }}{% endblock title-tag-content %}{% endif %}">
+        <meta name="keywords" content="{% if PageContext.MetaKeywords %}{{ PageContext.MetaKeywords }}{% else %}{{ siteContext.generalSettings.websiteName }}{% endif %}">
         <meta name="correlationId" content="{{ pageContext.correlationId }}">
 
         {% endblock meta-tags %}
@@ -107,6 +107,7 @@
 
     {% block open-body-tag %}
     <body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
+        <a href="#page-content" style="position: absolute; top: -100vh;">Skip to Content</a>
     {% endblock open-body-tag %}
         <div id="page-wrapper" class="mz-l-pagewrapper">
             {% if themeSettings.enableRecaptcha %}
