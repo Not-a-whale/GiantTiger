@@ -9,7 +9,7 @@
 {% endif %}
 {% endblock head-tag-scripts %}
 
-{% block body-tag-classes %} mz-cart {% endblock body-tag-classes %}
+{% block body-tag-classes %}mz-cart{% endblock body-tag-classes %}
 
 {% block secondary-nav %}{% endblock secondary-nav %}
 
@@ -47,7 +47,7 @@
 			</form>
 	<!-- Show empty cart if model is empty -->
 	{% else %}
-			<div class="cart-div">Your bag is empty - continue shopping!</div>
+			<h2 class="cart-div">Your bag is empty - continue shopping!</h2>
 			<div class="cart-div">
 	            <a href="/" class="btn">
 	            	<div class="cart-btn-continue"> Continue Shopping</div>
