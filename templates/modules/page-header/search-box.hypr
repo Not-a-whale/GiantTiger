@@ -2,7 +2,7 @@
     <input type="hidden" name="categoryId" value="{{themeSettings.allProductsCategoryId}}" />
 
     <fieldset class="mz-searchbox-field">
-        <legend style="display: none">{{ labels.search }}</legend>
+        <legend class="hidden">{{ labels.search }}</legend>
         <input placeholder="{{ labels.search }}" id="search-field" type="search" aria-label="search input" class="mz-searchbox-input ml-header-search-field form-control" autocomplete="off" name="query" data-mz-role="searchquery" />
         <button class="mz-searchbox-button" type="submit">
             <span class="glyphicon glyphicon-search">

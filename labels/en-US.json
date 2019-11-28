@@ -265,6 +265,7 @@
   "length": "Length",
   "liteRegForgotPasswordLabel": "Forgot Password?",
   "localStores": "Stores",
+  "locateStore": "Locate Store",
   "locationWait": "We're searching for local stores. Your browser may ask for permission to use your location. Click \"Allow\" to sort the search results by distance.",
   "locationWaitProd": "We're searching local stores for <strong>{0}</strong>. Your browser may ask for permission to use your location. Click \"Allow\" to sort the search results by distance.",
   "logIn": "Log In",

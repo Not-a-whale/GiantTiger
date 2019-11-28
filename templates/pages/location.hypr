@@ -15,17 +15,21 @@
              <div class="empty-store-container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                        <p class="label-nearby-stores">{{ labels.locateStore }}</p>
-                        <div class="store-search-container"> 
-                            <div class="input-group stylish-input-group">
-                                <input id="searchTermEmpty" type="text" class="form-control" placeholder="{{themeSettings.searchStorePlaceHolder}}">
-                                <span class="input-group-addon">
-                                    <button class="btn-find-stores-empty" type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div> 
-                        </div>
+                        <form>
+                            <fieldset>
+                                <legend class="label-nearby-stores">{{ labels.locateStore }}</legend>
+                                <div class="store-search-container"> 
+                                    <div class="input-group stylish-input-group">
+                                        <input id="searchTermEmpty" type="text" class="form-control" placeholder="{{themeSettings.searchStorePlaceHolder}}">
+                                        <span class="input-group-addon">
+                                            <button class="btn-find-stores-empty" type="submit" aria-label="Find Stores - Empty">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+                                    </div> 
+                                </div>
+                            </fieldset>
+                        </form>
                         <div class="error-success-message-container">
                             <p class="hidden empty-search">{{ labels.emptyStoreSearch }}</p>
                         </div>
@@ -43,17 +47,21 @@
              <div class="search-view-container">
                 <div class="row">
                     <div class="col-md-3 col-sm-5">
-                        <p class="label-nearby-stores">{{ labels.locateStore }}</p>
-                        <div class="store-search-container"> 
-                            <div class="input-group stylish-input-group">
-                                <input id="searchTermView" type="text" class="form-control"  placeholder="{{themeSettings.searchStorePlaceHolder}}">
-                                <span class="input-group-addon">
-                                    <button class="btn-find-stores" type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
+                        <form>
+                            <fieldset>
+                                <legend class="label-nearby-stores">{{ labels.locateStore }}</legend>
+                                <div class="store-search-container"> 
+                                    <div class="input-group stylish-input-group">
+                                        <input id="searchTermView" type="text" class="form-control" placeholder="{{themeSettings.searchStorePlaceHolder}}">
+                                        <span class="input-group-addon">
+                                            <button class="btn-find-stores" type="submit" aria-label="Find Stores">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
                         <p class="hidden empty-search">{{ labels.emptyStoreSearch }}</p>
                         <div class="error-success-message-container hidden">
                             <p id="success-shops"></p>
@@ -64,8 +72,8 @@
                             {% include "modules/location/locations" with model=model.locations %}
                         </div>
                         <div class="pagination-wrapper hidden">    
-                            <a id="showLessStores" class="pull-left hidden" href="#" data-start-index="0">prev</a>
-                            <a id="showMoreStores" class="pull-right" href="#" data-start-index="{{themeSettings.storesPageSize}}">see more</a>
+                            <a id="showLessStores" class="pull-left hidden" href="javascript:;" data-start-index="0">prev</a>
+                            <a id="showMoreStores" class="pull-right" href="javascript:;" data-start-index="{{themeSettings.storesPageSize}}">see more</a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-7" id="mz-store-locator-map">
