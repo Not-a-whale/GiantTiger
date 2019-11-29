@@ -1297,7 +1297,6 @@
         "fieldLabel": "Custom Button Label",
         "xtype": "mz-input-text"
       }
-
     ],
     "icon": "/resources/admin/widgets/03_heading_p.png",
     "id": "sendemail",

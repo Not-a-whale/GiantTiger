@@ -1,5 +1,5 @@
 <div
-    class="{%if model.config.customClass %}{{model.config.customClass}}{% else %}default_email_form{% endif %} {%if model.config.hidden_form%} hidden{%endif%}">
+    class="{%if model.config.customClass %}{{model.config.customClass}}{% else %}default_email_form{% endif %}{%if model.config.hidden_form%} hidden{%endif%}">
     <form id="{%if model.config.customId %}{{model.config.customId}}{% else %}{{model.definitionId}}{% endif %}"
         data-sourceEmail="{{model.config.email_from}}"
         data-ccEmailAddresses="{{model.config.email_cc}}"
@@ -7,10 +7,9 @@
         data-emailTemplate="{{model.config.form_email_template}}"
         data-successMessage="{{model.config.form_success_message}}"
         data-errorMessage="{{model.config.form_error_message}}"
-
     >
         {{model.config.form_html|safe}}
-        <input type="submit" class="primary-btn" name="submit-email-form"
+        <input class="primary-btn" name="submit-email-form" type="submit" 
             value="{%if model.config.customButtonValue %}{{model.config.customButtonValue}}{% else %}Submit{% endif %}">
     </form>
 </div>
@@ -22,8 +21,5 @@
     </div>
 </div> -->
 
-<style>
-    {% inline_style "form-styles.less" %}
-</style>
 {% preload_json model "config" %}
 {% require_script "widgets/sendEmail/sendemail" %}

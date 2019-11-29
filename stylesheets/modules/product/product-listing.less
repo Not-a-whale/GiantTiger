@@ -2,49 +2,72 @@
     position:relative;
 
     .mz-productlisting-details {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
 
         .mz-productlisting-image {
-            order: 1;
+            -webkit-box-ordinal-group: 2;
+                -ms-flex-order: 1;
+                    order: 1;
         }
 
         .mz-productlisting-title {
             &-wrapper {
-                order: 2;
+                -webkit-box-ordinal-group: 3;
+                    -ms-flex-order: 2;
+                        order: 2;
                 margin-top: 5px;
 
                 @media (min-width: 768px) {
-                    order: 4;
+                    -webkit-box-ordinal-group: 5;
+                        -ms-flex-order: 4;
+                            order: 4;
                     margin-top: 0;
                 }
             }
         }
 
         .mz-productlisting-swatch {
-            order: 3;
+            -webkit-box-ordinal-group: 4;
+                -ms-flex-order: 3;
+                    order: 3;
         }
 
         .mz-productlisting-shortdesc {
             &-wrapper {
-                order: 4;
+                -webkit-box-ordinal-group: 5;
+                    -ms-flex-order: 4;
+                        order: 4;
             }
         }
 
         .mz-productlisting-productcode {
-            order: 5;
+            -webkit-box-ordinal-group: 6;
+                -ms-flex-order: 5;
+                    order: 5;
         }
 
         .mz-productlisting-extra {
-            order: 6;
+            -webkit-box-ordinal-group: 7;
+                -ms-flex-order: 6;
+                    order: 6;
         }
 
         .mz-productlisting-price {
-            order: 7;
+            -webkit-box-ordinal-group: 8;
+                -ms-flex-order: 7;
+                    order: 7;
         }
 
         .mz-productlisting-ratings {
-            order: 8;
+            -webkit-box-ordinal-group: 9;
+                -ms-flex-order: 8;
+                    order: 8;
         }
     }
 
@@ -94,7 +117,8 @@
         right: 0;
         bottom: 0;
         position: absolute;
-        box-shadow: 1px 1px 10px #eee;
+        -webkit-box-shadow: 1px 1px 10px #eee;
+                box-shadow: 1px 1px 10px #eee;
         z-index:2;
         span{
             font-weight:bold;
