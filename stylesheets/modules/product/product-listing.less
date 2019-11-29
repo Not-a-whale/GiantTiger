@@ -1,5 +1,53 @@
 ﻿.mz-productlisting {
     position:relative;
+
+    .mz-productlisting-details {
+        display: flex;
+        flex-direction: column;
+
+        .mz-productlisting-image {
+            order: 1;
+        }
+
+        .mz-productlisting-title {
+            &-wrapper {
+                order: 2;
+                margin-top: 5px;
+
+                @media (min-width: 768px) {
+                    order: 4;
+                    margin-top: 0;
+                }
+            }
+        }
+
+        .mz-productlisting-swatch {
+            order: 3;
+        }
+
+        .mz-productlisting-shortdesc {
+            &-wrapper {
+                order: 4;
+            }
+        }
+
+        .mz-productlisting-productcode {
+            order: 5;
+        }
+
+        .mz-productlisting-extra {
+            order: 6;
+        }
+
+        .mz-productlisting-price {
+            order: 7;
+        }
+
+        .mz-productlisting-ratings {
+            order: 8;
+        }
+    }
+
     .mz-productlisting-info {
         margin-top: 5px;
     }

@@ -19,7 +19,11 @@
         {% if productImage.altText %}
             alt="{{ productImage.altText }}"
         {% else %}
-            alt=""
+            {% if productName %}
+                alt="{{ prodcutName }}"
+            {% else %}
+                alt="image"
+            {% endif %}
         {% endif %}
         {% if productImageWidth %}
             width="{{productImageWidth}}"

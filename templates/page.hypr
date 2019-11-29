@@ -40,6 +40,7 @@
 
         {% block meta-tags %}
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
         <meta name="description" content="{% if PageContext.MetaDescription %}{{ PageContext.MetaDescription }}{% else %}{% block title-tag-content %}{{ siteContext.generalSettings.websiteName }}{% endblock title-tag-content %}{% endif %}">
         <meta name="keywords" content="{% if PageContext.MetaKeywords %}{{ PageContext.MetaKeywords }}{% else %}{{ siteContext.generalSettings.websiteName }}{% endif %}">

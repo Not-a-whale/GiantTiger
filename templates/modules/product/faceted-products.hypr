@@ -30,7 +30,7 @@
     {% endblock breadcrumbs %}
         <div class="mz-l-paginatedlist-header">
             <div class="title-sortby-wrappper">
-               <span class="mz-pagetitle">{{ pageContext.title|safe }}</span>
+               <h1 class="mz-pagetitle">{{ pageContext.title|safe }}</h1>
                 <div data-mz-pagesort class="mz-sortby">
                     {% include "modules/common/page-sort" %}
                 </div>
