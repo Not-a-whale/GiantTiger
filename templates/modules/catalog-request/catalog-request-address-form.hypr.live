@@ -6,10 +6,10 @@
 	{% parent %}
     <div class="mz-l-formfieldgroup-row ">
         <div class="mz-l-formfieldgroup-cell mz-hide-column-catalog">
-            <label for="email">{{ labels.emailAddress }}<span class="is-required"> *</span></label>
+            <label for="emailLogin">{{ labels.emailAddress }}<span class="is-required"> *</span></label>
         </div>
         <div class="mz-l-formfieldgroup-cell">
-            <input type="email" class="input" name="email" data-mz-value="email" value="{{ model.email }}" maxlength="{{themeSettings.emailLength}}" placeholder="{{ labels.emailLogin}}" >
+            <input type="email" class="input" id="emailLogin" name="email" data-mz-value="email" value="{{ model.email }}" maxlength="{{themeSettings.emailLength}}" placeholder="{{ labels.emailLogin}}" >
             <span class="mz-validationmessage" data-mz-validationmessage-for="{{ addresscontext }}email"></span>
         </div>
     </div> 
