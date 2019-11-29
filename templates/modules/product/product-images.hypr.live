@@ -1,10 +1,10 @@
 {% if model.content.productImages %}
-<figure class="mz-productimages-main text-center {% if model.content.productImages.length > 1 %}hidden-xs {% endif %}">
+<figure class="mz-productimages-main text-center{% if model.content.productImages.length > 1 %} hidden-xs{% endif %}">
     {% include "modules/product/product-image" with productImage=model.mainImage productAltText=model.mainImage.altText productMaxWidth=themeSettings.productImagePdpMaxWidth isMainImage="true" as_parameter %}
 </figure>
 <div class="row hidden-xs">
     <div class="col-sm-12">
-        <label class="rollover"><i class="fa fa-search-plus" aria-hidden="true"></i> {{ labels.rolloverToZoom}}</label>
+        <span class="rollover"><i class="fa fa-search-plus" aria-hidden="true"></i> {{ labels.rolloverToZoom}}</span>
     </div>
 </div>
 <div class="clearfix"></div>
@@ -22,7 +22,7 @@
     </div>
 {% else %}
     <div class="hidden-xs">
-        <ul{% if model.content.productImages.length > 4 %} id="productpager-Carousel"{% endif %} class="products_list ">
+        <ul{% if model.content.productImages.length > 4 %} id="productpager-Carousel"{% endif %} class="products_list">
         {% for image in model.content.productImages %}
             <li{% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-thumb="{{ forloop.index }}" data-label="{{image.imageLabel}}">
                 <a class="mz-productimages-thumb" data-slide-index="{{ forloop.index0 }}" href="javascript:void(0);">

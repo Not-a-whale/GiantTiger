@@ -3,7 +3,7 @@
     <div class="mz-productoptions-optioncontainer clearfix">
         {% with option.values|findwhere("isSelected", true) as selectedColor %}      
             {% if selectedColor and selectedColor.value %}
-                <label class="mz-productoptions-optionlabel option-label">
+                <div class="mz-productoptions-optionlabel option-label">
                     <span class="text-uppercase">
                     {% if option.attributeDetail.name == "OTHER" %}
                     OPTION:
@@ -20,23 +20,23 @@
                             {{ selectedColor.stringValue }}
                         {% endif %}
                     {% endif %}</span>
-                </label>
+                </div>
             {% else %}
-                <label class="mz-productoptions-optionlabel option-label text-uppercase" data-option="{{ option.attributeDetail.name }}">
-                {% if option.attributeDetail.name == "OTHER" %}
-                    Select Option</label>
-                {% else %}
-                    Select a {{ option.attributeDetail.name }}
-                {% endif %}
-                </label>
+                <div class="mz-productoptions-optionlabel option-label text-uppercase" data-option="{{ option.attributeDetail.name }}">
+                    {% if option.attributeDetail.name == "OTHER" %}
+                        Select Option
+                    {% else %}
+                        Select a {{ option.attributeDetail.name }}
+                    {% endif %}
+                </div>
             {% endif %}
         {% endwith %}
         <div class="mz-productoptions-valuecontainer">
             {% if option.attributeDetail.inputType == "List" %}
-                <select {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option hide" data-mz-product-option="{{ option.attributeFQN }}">
+                <select {% if option.isMultiValue %}multiple{% endif %} class="mz-productoptions-option hide" data-mz-product-option="{{ option.attributeFQN }}" title="{% if option.attributeDetail.name == "OTHER" %}Select Option {{ forloop.counter0 }}{% else %}Select a {{ option.attributeDetail.name }}{% endif %}" aria-label="{% if option.attributeDetail.name == "OTHER" %}Select Option {{ forloop.counter0 }}{% else %}Select a {{ option.attributeDetail.name }}{% endif %}">
                     {% if not option.isMultiValue %}<option></option>{% endif %}
                     {% for value in option.values %}
-                    <option {% if not value.isEnabled %} class="is-disabled" {% endif %} {% if value.isSelected %}selected="true"{% endif %} value="{{value.value}}">{{value.stringValue|default(value.value)}}{% if value.deltaPrice and value.deltaPrice > 0 %} ( {{ value.deltaPrice|currency }} {{ labels.more }} ){% endif %}</option>
+                        <option {% if not value.isEnabled %} class="is-disabled" {% endif %} {% if value.isSelected %}selected="selected"{% endif %} value="{{value.value}}">{{value.stringValue|default(value.value)}}{% if value.deltaPrice and value.deltaPrice > 0 %} ( {{ value.deltaPrice|currency }} {{ labels.more }} ){% endif %}</option>
                     {% endfor %}
                 </select>
                 {% if option.attributeFQN == 'tenant~color' %}
