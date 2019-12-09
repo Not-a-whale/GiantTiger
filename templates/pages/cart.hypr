@@ -38,7 +38,7 @@
 		            {% include "modules/cart/cart-table" %}
 		        </div>
 						{% block modal-dialog %}
-						 <div mz-modal-discount-dialog class="mz-discount-modal">
+						 <div class="mz-discount-modal" mz-modal-discount-dialog>
 							 <div id="mzModalDialog" data-backdrop="static" class="modal fade" tabindex="-1" role="dialog">
 								 {% include "modules/cart/discount-modal/discount-modal" %}
 							 </div>

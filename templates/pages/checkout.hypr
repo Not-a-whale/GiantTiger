@@ -9,7 +9,7 @@
 {% endif %}
 {% endblock head-tag-scripts %}
 
-{% block body-tag-classes %} mz-checkout {% endblock body-tag-classes %}
+{% block body-tag-classes %}mz-checkout{% endblock body-tag-classes %}
 
 {% block site-nav %}{% endblock site-nav %}
 {% block secondary-nav %}{% endblock secondary-nav %}
@@ -76,7 +76,7 @@
             </div>
 
         </div><!-- left .column -->
-        <div id="AmazonPayButton" style="display:none;"/>
+        <div id="AmazonPayButton" style="display:none;"></div>
     </form>
 </div>
 

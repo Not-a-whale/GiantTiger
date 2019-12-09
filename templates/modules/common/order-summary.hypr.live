@@ -6,7 +6,7 @@
         </div>
         {% for item in model.items %}
             <div class="mz-ordersummary-lineitems mz-carttable-item">
-              <div class="mz-ordersummary-line mz-ordersummary-line-item {% if item.discountTotal > 0 %}is-discounted{% endif %}">
+              <div class="mz-ordersummary-line mz-ordersummary-line-item{% if item.discountTotal > 0 %} is-discounted{% endif %}">
                     <div class="mz-ordersummary-item-product col-sm-6 col-xs-12 mz-order-content-container mz-reset-padding">
                       <div class="pull-left mz-order-summary-image">
                         {% with item.product|get_product_attribute("tenant~color") as colorAttr %}
@@ -59,13 +59,13 @@
                           {% endfor %}
                         </div>
                         {% endif %}
-                        <div class="mz-propertylist ">
+                        <div class="mz-propertylist">
                           <div>Qty:&nbsp;<span class="text-capitalize">{{ item.quantity }}</span></div>
                         </div>
                       </div>
                     </div>
                     <div class="clearfix visible-xs mz-print-hide"></div>
-                    <div class="col-sm-3 col-sm-3 col-xs-6  hidden-xs mz-price-each-display mz-price-main-container">
+                    <div class="col-sm-3 col-xs-6  hidden-xs mz-price-each-display mz-price-main-container">
                         {% include "modules/common/item-price" %}
                     </div>
                     <div class="col-sm-3 col-xs-6 mz-checkout-item-total-container pull-right">

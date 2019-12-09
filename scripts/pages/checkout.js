@@ -140,7 +140,6 @@ require(["modules/jquery-mozu",
             'shippingMethodCode'
         ],
         initStepView: function() {
-            console.log("initi step view");
             var me  = this;
             var isShippingAddressValid = me.model.get("fulfillmentContact").isValid();
             if(isShippingAddressValid)
@@ -451,11 +450,11 @@ require(["modules/jquery-mozu",
         onEnterDigitalCreditCode: function(model, code) {
             if (code && !this.codeEntered) {
                 this.codeEntered = true;
-                this.$el.find('input#digital-credit-code').siblings('button').prop('disabled', false);
+                this.$el.find('input.digital-credit-code').siblings('button').prop('disabled', false);
             }
             if (!code && this.codeEntered) {
                 this.codeEntered = false;
-                this.$el.find('input#digital-credit-code').siblings('button').prop('disabled', true);
+                this.$el.find('input.digital-credit-code').siblings('button').prop('disabled', true);
             }
         },
         enableDigitalCredit: function(e) {

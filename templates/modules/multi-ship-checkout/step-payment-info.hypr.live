@@ -175,8 +175,7 @@
             {% endif %}
 
         {% else %}
-            <h4 class="mz-checkout-nopaymentrequired mz-checkoutform">{{ labels.noPaymentRequired|string_format(model.remainingTotal|currency) }}</h4>
-
+            <h4 class="mz-checkout-nopaymentrequired mz-checkoutform">{% if model.remainingTotal %}{{ labels.noPaymentRequired|string_format(model.remainingTotal|currency) }}{% else %}No Payment Required{% endif %}</h4>
         {% endif %}
 
         <div class="mz-l-stack-section mz-formfieldgroup-row mz-paymentselector-separator mz-checkoutform">
@@ -211,11 +210,11 @@
             {% include "modules/checkout/checkout-digital-credit" %}
         </div>
         <div class="mz-formstep-next">
-            <button class="mz-button" data-mz-action="next">{{ labels.next }}</button>
+            <button class="mz-button" data-mz-action="next" title="Next step (Review)" aria-label="Next step (Review)">{{ labels.next }}</button>
         </div>
     </div>
 
     <div class="mz-formstep-next">
-        <button class="mz-button button_primary" data-mz-action="next">{{ labels.next }}</button>
+        <button class="mz-button button_primary" data-mz-action="next" title="Next step (Review)" aria-label="Next step (Review)">{{ labels.next }}</button>
     </div>
 </div><!-- .mz-panel-wrap -->
