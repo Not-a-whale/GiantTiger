@@ -2,7 +2,7 @@
 
 {% block title-tag-content %}{% firstof pageContext.metaTitle labels.logIn %} - {% parent %}{% endblock title-tag-content %}
 
-{% block body-tag-classes %} mz-loginpage {% endblock body-tag-classes %}
+{% block body-tag-classes %}mz-loginpage{% endblock body-tag-classes %}
 
 {% block body-content %}
     <div class="mz-l-container">
@@ -45,10 +45,10 @@
                         </div>
                         <div class="mz-l-formfieldgroup-row">
                             <div class="mz-l-formfieldgroup-cell">
-                                <label for="password">{{ labels.password }}</label>
+                                <label for="loginPagePassword">{{ labels.password }}</label>
                             </div>
                             <div class="mz-l-formfieldgroup-cell">
-                                <input name="password"  type="password" data-mz-login-password maxlength="{{themeSettings.passwordMaxLength}}" />
+                                <input id="loginPagePassword" name="password"  type="password" data-mz-login-password maxlength="{{themeSettings.passwordMaxLength}}" />
                             </div>
                         </div>
                         {% if themeSettings.enableRecaptcha %}
