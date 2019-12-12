@@ -12,9 +12,9 @@
                 {% endif %}
             {% endblock product-image %}
         </div>
-        <div class="mz-productlisting-title-wrapper">
+        <h2 class="mz-productlisting-title-wrapper">
             <a class="mz-productlisting-title" href='{% make_url "product" model %}'>{{model.content.productName|safe}}</a>
-        </div>
+        </h2>
         <div class="mz-productlisting-swatch">
             <!--Color Swatch-->
             {% for option in model.options %}
@@ -30,7 +30,7 @@
             {% endfor %}
         </div>
         <div class="mz-productlisting-shortdesc-wrapper">
-            <p class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(themeSettings.maxProductSummaryWords)|safe }}</p>
+            <h3 class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(themeSettings.maxProductSummaryWords)|safe }}</h3>
         </div>
         {% block product-code %}
             {% if themeSettings.listProductCode %}

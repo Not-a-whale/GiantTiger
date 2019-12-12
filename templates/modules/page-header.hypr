@@ -6,11 +6,13 @@
 <header class="mz-pageheader{% if themeSettings.bannerImageEnabled %} mz-pageheader-hasbanner {% endif %}">
     <div class="container">
         <div class="ml-header-content">
-            <div class="ml-header-logo-wrapper">
-                {% block store-branding %}
-                    {% include "modules/page-header/store-branding" %}
-                {% endblock store-branding %}
-            </div>
+            {% block header-sitelogo %}
+                <div class="ml-header-logo-wrapper">
+                    {% block store-branding %}
+                        {% include "modules/page-header/store-branding" %}
+                    {% endblock store-branding %}
+                </div>
+            {% endblock header-sitelogo %}
             <div class="ml-header-search-wrapper">
                 {% block search-box %}
                     {% include "modules/page-header/search-box" %}
