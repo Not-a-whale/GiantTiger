@@ -5,17 +5,17 @@
         window.dataLayer = window.dataLayer || [];
         dataLayer.push({
         "event": "DEPLabs",
-          "depData": {
-            "purchase": {
-              "actionField": {
-                "id": "{% for attribute in model.attributes %}{% if attribute.fullyQualifiedName == themeSettings.omxOrderNumberAttribute %}{% with attribute.values|first as omxOrderNumber %}{{omxOrderNumber}}{% set_var isOMXOrderNumber=true %}{% endwith %}{% endif %}{% endfor %}{% if not isOMXOrderNumber %}{{ model.orderNumber }}{% endif %}",                        
-                "affiliation": "{{siteContext.generalSettings.websiteName}}",
+         "depData": {
+          "purchase": {
+           "actionField": {
+            "id": "{% for attribute in model.attributes %}{% if attribute.fullyQualifiedName == themeSettings.omxOrderNumberAttribute %}{% with attribute.values|first as omxOrderNumber %}{{omxOrderNumber}}{% set_var isOMXOrderNumber=true %}{% endwith %}{% endif %}{% endfor %}{% if not isOMXOrderNumber %}{{ model.orderNumber }}{% endif %}",            
+            "affiliation": "{{siteContext.generalSettings.websiteName}}",
                 "subtotalRevenue": "{{model.subtotal}}",
-                "revenue": "{{model.total}}",                    
-                "tax":"{{model.taxTotal}}",
-                "shipping": "{{model.shippingTotal}}",
+            "revenue": "{{model.total}}",          
+            "tax":"{{model.taxTotal}}",
+            "shipping": "{{model.shippingTotal}}",
                 "coupon": "{% for orderDiscount in model.orderDiscounts %}{{orderDiscount.couponCode}}{% if not forloop.last %},{% endif %}{% endfor %}"
-              },
+           },
             "products": [
             {% for orderItem in model.items %}
                 {
@@ -26,7 +26,7 @@
                     "originalPrice": "{{orderItem.unitPrice.listAmount}}",
                     "brand": "{% for property in orderItem.product.properties %}{% if property.attributeFQN == "tenant~brand-name" %}{{property.values.0.stringValue|replace('\"','&rdquo;')|escape|safe}}{% endif %}{% endfor %}",
                     "category": "{% with categories|find(orderItem.product.categories.0.id) as category %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}{% endwith %}/{{orderItem.product.name|replace('\"','&rdquo;')|escape|safe}}",
-                    "variant": "{% for option in orderItem.product.options %}{{option.value|replace('\"','&rdquo;')|escape|safe}}{% if not forloop.last %},{% endif %}{% endfor %}",
+                "variant": "{% for option in orderItem.product.options %}{{option.value|replace('\"','&rdquo;')|escape|safe}}{% if not forloop.last %},{% endif %}{% endfor %}",
                     "quantity": {{orderItem.quantity}},
                     "list": "Directory: ",
                 {% if  orderItem.data.autoreplanishmentCode %}                                 
@@ -52,19 +52,19 @@
   window.dataLayer = window.dataLayer || [];
   dataLayer.push({
   "event": "DEPLabs",
-  "depData": {
-    "detail": {
-      "actionField": {"list": "directory"},    
-      "products": [{
-        "name": "{{ model.content.productName|replace('\"','&rdquo;')|escape|safe }}",        
-        "id": "{{ model.productCode }}",
-        "price": "{{model.price.catalogListPrice}}",
+ "depData": {
+  "detail": {
+   "actionField": {"list": "directory"},  
+   "products": [{
+    "name": "{{ model.content.productName|replace('\"','&rdquo;')|escape|safe }}",    
+    "id": "{{ model.productCode }}",
+    "price": "{{model.price.catalogListPrice}}",
         "originalPrice" : "{% if model.priceRange %}{{model.priceRange.lower.price}} - {{model.priceRange.upper.price}}{% else %}{% if model.price.price %}{{model.price.price}}{% else %}"{% endif %}{% endif %}",
         "brand": "{% for property in model.properties %}{% if property.attributeFQN == "tenant~brand-name" %}{{property.values.0.stringValue|replace('\"','&rdquo;')|escape|safe}}{% endif %}{% endfor %}",
-        "category": "{% if breadcrumbCategories %}{% for catId in breadcrumbCategories %}{% with catId|multiply(1) as catIdNumber %}{% with categories|find(catIdNumber) as category %}{% if category %}{% if not forloop.last %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}/{% else %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}{% endif %}{% endif %}{% endwith %}{% endwith %}{% endfor %}{% else %}{% for crumb in navigation.breadcrumbs %}{% if not forloop.last %}{{crumb.name|replace('\"','&rdquo;')|escape|safe}}/{% else %}{{ crumb.name|replace('\"','&rdquo;')|escape|safe }}{% endif %}{% endfor %}{% endif %}",
-        "variant": ""
-       }]
-     }{% if globalCart.items.length > 0 %},
+    "category": "{% if breadcrumbCategories %}{% for catId in breadcrumbCategories %}{% with catId|multiply(1) as catIdNumber %}{% with categories|find(catIdNumber) as category %}{% if category %}{% if not forloop.last %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}/{% else %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}{% endif %}{% endif %}{% endwith %}{% endwith %}{% endfor %}{% else %}{% for crumb in navigation.breadcrumbs %}{% if not forloop.last %}{{crumb.name|replace('\"','&rdquo;')|escape|safe}}/{% else %}{{ crumb.name|replace('\"','&rdquo;')|escape|safe }}{% endif %}{% endfor %}{% endif %}",
+    "variant": ""
+   }]
+  }{% if globalCart.items.length > 0 %},
     "cart": {
       "coupon": "{% for orderDiscount in globalCart.orderDiscounts %}{{orderDiscount.couponCode}}{% if not forloop.last %},{% endif %}{% endfor %}",
       "products": [
@@ -77,7 +77,7 @@
               "originalPrice": "{{orderItem.unitPrice.listAmount}}",
               "brand": "{% for property in orderItem.product.properties %}{% if property.attributeFQN == "tenant~brand-name" %}{{property.values.0.stringValue|replace('\"','&rdquo;')|escape|safe}}{% endif %}{% endfor %}",
               "category": "{% with categories|find(orderItem.product.categories.0.id) as category %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}{% endwith %}/{{orderItem.product.name|replace('\"','&rdquo;')|escape|safe}}",
-              "variant": "{% for option in orderItem.product.options %}{{option.value}}{% if not forloop.last %},{% endif %}{% endfor %}",
+          "variant": "{% for option in orderItem.product.options %}{{option.value}}{% if not forloop.last %},{% endif %}{% endfor %}",
 {% if  orderItem.data.autoreplanishmentCode %}                                 
         {% with "autoReplenishment_X"|replace("X", orderItem.data.autoreplanishmentCode) as autoReplenishmentCode %}
               "subscription": "{{ themeSettings|prop(autoReplenishmentCode)|replace('\"','&rdquo;')|escape|safe }}",
@@ -91,7 +91,7 @@
       ]
     }
     {% endif %}
-   }
+ }
 });
 </script>
 {% endif %}
@@ -101,7 +101,7 @@
   window.dataLayer = window.dataLayer || [];
   dataLayer.push({
   "event": "DEPLabs",
-  "depData": {
+ "depData": {
     "cart": {
       "coupon": "{% for orderDiscount in globalCart.orderDiscounts %}{{orderDiscount.couponCode}}{% if not forloop.last %},{% endif %}{% endfor %}",
       "products": [
@@ -114,7 +114,7 @@
               "originalPrice": "{{orderItem.unitPrice.listAmount}}",
               "brand": "{% for property in orderItem.product.properties %}{% if property.attributeFQN == "tenant~brand-name" %}{{property.values.0.stringValue|replace('\"','&rdquo;')|escape|safe}}{% endif %}{% endfor %}",
               "category": "{% with categories|find(orderItem.product.categories.0.id) as category %}{{category.content.name|replace('\"','&rdquo;')|escape|safe}}{% endwith %}/{{orderItem.product.name|replace('\"','&rdquo;')|escape|safe}}",
-              "variant": "{% for option in orderItem.product.options %}{{option.value|replace('\"','&rdquo;')|escape|safe}}{% if not forloop.last %},{% endif %}{% endfor %}",
+          "variant": "{% for option in orderItem.product.options %}{{option.value|replace('\"','&rdquo;')|escape|safe}}{% if not forloop.last %},{% endif %}{% endfor %}",
     {% if  orderItem.data.autoreplanishmentCode %}                                 
         {% with "autoReplenishment_X"|replace("X", orderItem.data.autoreplanishmentCode) as autoReplenishmentCode %}
               "subscription": "{{ themeSettings|prop(autoReplenishmentCode)|replace('\"','&rdquo;')|escape|safe }}",
@@ -127,7 +127,7 @@
       {% endfor %}
       ]
     }
-   }
+ }
 });
 </script>
 {% endif %}

@@ -106,8 +106,8 @@ define(['hyprlive', 'underscore', 'modules/jquery-mozu', "hyprlivecontext", "mod
                 
                 $('.mz-productdetail-addtocart').on("click", function () {
                     metricsEngine.currentProduct = $(this).data('mzProductCode')?$(this).data('mzProductCode'):$(this).data('mz-product-code');
-                    if(!metricsEngine.currentProduct){ //is pdp product
-                        var prod = ProductModels.Product.fromCurrent();    
+                    if(!metricsEngine.currentProduct){ //is quickview or pdp product
+                        var prod = (window.quickviewProduct)?window.quickviewProduct:ProductModels.Product.fromCurrent();
                         metricsEngine.currentProduct = prod.id;
                     }
                 });

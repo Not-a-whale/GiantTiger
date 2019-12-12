@@ -12,9 +12,10 @@ define([
         "modules/views-productimages",
         "elevatezoom",
         "modules/color-swatches",
-        'modules/common-functions'
+        'modules/common-functions',
+        "modules/metrics"
     ],
-    function($, _, Hypr, hyprlivecontext, ProductModels, CartMonitor, api, Backbone, blockUiLoader, bxslider, ProductImageViews, elevatezoom, colorSwatch, CommonFunctions) {
+    function($, _, Hypr, hyprlivecontext, ProductModels, CartMonitor, api, Backbone, blockUiLoader, bxslider, ProductImageViews, elevatezoom, colorSwatch, CommonFunctions, MetricsEngine) {
 
         var sitecontext = hyprlivecontext.locals.siteContext;
         var cdn = sitecontext.cdnPrefix;
@@ -123,6 +124,7 @@ define([
                 var me = this;
 
                 Backbone.MozuView.prototype.render.apply(this);
+                window.metricsEngine.initAddToCartObserver(); //loads metrics actions
             },
             onMouseEnterChangeImage: function(_e) {
                 this.mainImage = $('#quickViewModal .mz-productimages-mainimage').attr('src');
@@ -555,7 +557,7 @@ define([
                         $(".stock-info").show();
                     }
                     blockUiLoader.unblockUi();
-
+                    window.metricsEngine.initAddToCartObserver();
 //                });
             }
         });
