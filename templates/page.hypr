@@ -37,6 +37,9 @@
 
     {% block head-tag %}
     <head>
+        {% if themeSettings.googleTagManagerEnabled and not pageContext.isEditMode %}
+            {% include "modules/google-tag-manager/gtm-loader-header" %}
+        {% endif %}
 
         {% include "modules/json-required-for-hyprlive" %}
 
@@ -172,6 +175,9 @@
 
         {% visitor_tracking_pixel %}
     </body>
+    {% if themeSettings.googleTagManagerEnabled and not pageContext.isEditMode %}
+        {% include "modules/google-tag-manager/gtm-loader" %}
+    {% endif %}
     {% endblock body-tag %}
 
 </html>

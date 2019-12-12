@@ -14,8 +14,9 @@ define(['modules/api',
         'modules/applepay',
         'modules/cart/discount-dialog/views-discount-dialog',
         'modules/models-discount',
-        'modules/message-handler'
-], function (api, Backbone, _, $, CartModels, CartMonitor, HyprLiveContext, Hypr, preserveElement, modalDialog, paypal, LocationModels, AmazonPay, ApplePay, DiscountModalView, Discount, MessageHandler) {
+        'modules/message-handler',
+        'modules/metrics'
+], function (api, Backbone, _, $, CartModels, CartMonitor, HyprLiveContext, Hypr, preserveElement, modalDialog, paypal, LocationModels, AmazonPay, ApplePay, DiscountModalView, Discount, MessageHandler, MetricsEngine) {
 
     var ThresholdMessageView = Backbone.MozuView.extend({
       templateName: 'modules/cart/cart-discount-threshold-messages'

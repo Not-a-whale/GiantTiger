@@ -796,6 +796,8 @@
   "googleMapMaxNearbyDistance": 10000000,
   "googleMapPinIcon": "",
   "googleMapZoom": 8,
+  "googleTagManagerEnabled": true,
+  "googleTagManagerKey": "GTM-DPTEST",        
   "gutterWidth": "25px",
   "homePageCategoryWidgetAltText": "home_cat_widget_img",
   "internal-themeAddons": [],

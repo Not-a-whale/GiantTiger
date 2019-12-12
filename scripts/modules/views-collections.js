@@ -10,8 +10,9 @@ define([
     'modules/get-partial-view',
     'modules/color-swatches',
      'modules/block-ui',
-    'modules/category/infinite-scroller'
-], function(Backbone, $ , _, UrlDispatcher, IntentEmitter, getPartialView,colorSwatch,blockUiLoader,InfiniteScroller) {
+    'modules/category/infinite-scroller',
+    'modules/metrics'
+], function(Backbone, $ , _, UrlDispatcher, IntentEmitter, getPartialView,colorSwatch,blockUiLoader,InfiniteScroller, MetricsEngine) {
 
     function factory(conf) {
 

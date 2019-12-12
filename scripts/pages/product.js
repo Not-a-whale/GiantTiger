@@ -1,4 +1,4 @@
-﻿require([
+require([
     "modules/jquery-mozu",
     "underscore",
     "bxslider",
@@ -12,8 +12,9 @@
     "hyprlivecontext",
     "pages/family",
     "modules/api",
-    "async"
-], function($, _, bxslider, elevatezoom, blockUiLoader, Hypr, Backbone, CartMonitor, ProductModels, ProductImageViews, HyprLiveContext, FamilyItemView, api, async) {
+    "async",
+    "modules/metrics"
+], function($, _, bxslider, elevatezoom, blockUiLoader, Hypr, Backbone, CartMonitor, ProductModels, ProductImageViews, HyprLiveContext, FamilyItemView, api, async, MetricsEngine) {
     var sitecontext = HyprLiveContext.locals.siteContext;
     var cdn = sitecontext.cdnPrefix;
     var siteID = cdn.substring(cdn.lastIndexOf('-') + 1);
