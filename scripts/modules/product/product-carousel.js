@@ -5,8 +5,9 @@ define([
     "hyprlivecontext",
     "modules/api",
     "modules/get-partial-view",
-    "bxslider"
-], function(Backbone, $, _, HyprLiveContext, api, getPartialView, bxslider) {
+    "bxslider", 
+    "modules/metrics"
+], function(Backbone, $, _, HyprLiveContext, api, getPartialView, bxslider, MetricsEngine) {
     var items = [];
     var isLoadMore = true;
     var startIndex = 0;

@@ -4,8 +4,9 @@ define([
     "modules/api",
     "hyprlive",
     'underscore',
-    "modules/models-product"
-], function(Backbone, $, Api, Hypr, _, ProductModels) {
+    "modules/models-product",
+    "modules/metrics"
+], function(Backbone, $, Api, Hypr, _, ProductModels, MetricsEngine) {
 
     var globalCartRelatedProducts = Hypr.getThemeSetting('globalCartRelatedProducts'),
         globalCartRelatedProductsSize = Hypr.getThemeSetting('globalCartRelatedProductsSize'),

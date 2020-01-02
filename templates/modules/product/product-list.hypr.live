@@ -1,4 +1,4 @@
-﻿<div class="mz-productlist {% block module-classes %}{% endblock module-classes %}">
+<div class="mz-productlist {% block module-classes %}{% endblock module-classes %}">
     {% if model.items %}
     <ul id="product-list-ul" class="mz-productlist-list row ml-list-view-toggle grid-view {% block list-classes %}{% endblock list-classes %}">
         {% for prod in model.items %}
@@ -9,3 +9,6 @@
     <div id="more-item-container" class="clearfix"></div>
     {% require_script "modules/category/infinite-scroller" %}
 </div>
+{% if themeSettings.googleTagManagerEnabled and not pageContext.isEditMode %}
+    {% include "modules/google-tag-manager/gtm-product-list" %}
+{% endif %}

@@ -37,6 +37,10 @@
 
     {% block head-tag %}
         <head>
+			{% if themeSettings.googleTagManagerEnabled and not pageContext.isEditMode %}
+				{% include "modules/google-tag-manager/gtm-loader-header" %}
+			{% endif %}
+			
             {% block meta-tags %}
                 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
                 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -179,6 +183,10 @@
 
         {% visitor_tracking_pixel %}
         </body>
+		{% if themeSettings.googleTagManagerEnabled and not pageContext.isEditMode %}
+			{% include "modules/google-tag-manager/gtm-loader" %}
+		{% endif %}
+
     {% endblock body-tag %}
 
 </html>

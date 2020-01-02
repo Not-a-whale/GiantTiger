@@ -838,6 +838,24 @@
                     "fieldLabel": "Password for BorderFree"
                 }
             ]
+        },
+        {
+            "xtype": "panel",
+            "title": "Google Tag Manager",
+            "collapsed": false,
+            "collapsible": true,
+            "items": [
+                {
+                    "xtype": "mz-input-checkbox",
+                    "name": "googleTagManagerEnabled",
+                    "fieldLabel": "Enabled"
+                },
+                {
+                    "xtype": "mz-input-text",
+                    "name": "googleTagManagerKey",
+                    "fieldLabel": "Google Tag Manager ID"
+                }
+            ]
         }
     ]
 }
