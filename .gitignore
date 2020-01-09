@@ -15,7 +15,7 @@ node_modules/
 /compiled/
 .yo-rc.json
 mozu.config.json
-
+mozu.config.json*
 
 /nbproject/private/
 
