@@ -43,12 +43,17 @@
 @productListingThumbSize: {{ themeSettings.listProductThumbSize }}px;
 
 /* Colors */
-@primaryColor: #002C50;
-@secondaryColor: #0EB1C9;
-@navBorder: #48708a;
-@colorWhite: #FFFFFF;
+@primaryColor: #ffd204;
+@secondaryColor: #d71921;
+@black: #000000;
 @colorGray: #333333;
-@colorMediumGray: #666666;
+@colorMediumGrey: #666666;
+@globalIconOffState: #c2c2c2;
+@backgroundGrey: #ededed;
+@outlinesColor: #d6d6d6;
+@colorWhite: #FFFFFF;
+
+@navBorder: #48708a;
 @colorLighterGray: #9E9E9E;
 @colorLightGray: #E1E1E1;
 @colorOrange: #FFB540;
@@ -59,7 +64,6 @@
 @facetColorBox: 50px;
 @bgGray: #f8f8f8;
 @masala: #4a4a4a;
-@black: #000000;
 @orange: #f5a623;           //
 @white: #ffffff;
 @yellow: #f8e71c;
@@ -67,7 +71,8 @@
 @mystic-orangered: #fa451c;
 @table-bg-accent: #f9f9f9;
 @btnGrayDarkHover: #e3e3e3;
-@secondaryBtnColor:#FFCE06;
+@primaryBtnColor:#ffd204;
+@secondaryBtnColor:#ededed;
 
 @colorMediumGray: @colorLightGray;
 @primaryGreyBtnBgClr: @colorLightGray;
@@ -83,6 +88,21 @@
 @montserrat: 'Montserrat', sans-serif;
 @roboto: 'Roboto', sans-serif;
 
+
+.roboto-regular{
+    font-family: @roboto;
+    font-weight: 400;    
+}
+.roboto-medium{
+    font-family: @roboto;
+    font-weight: 500;    
+}
+.montserrat-semi-bold{
+    font-family: @montserrat;
+    font-weight: 600;    
+}
+
+
 .montserrat {
     font-family: @montserrat;
     font-weight: 400;
@@ -91,7 +111,6 @@
     font-family: @montserrat;
     font-weight: 900;
 }
-
 .roboto-thin, .roboto-thin-italic {
     font-family: @roboto;
     font-weight: 100;
@@ -103,10 +122,6 @@
 .roboto-normal {
     font-family: @roboto;
     font-weight: 400;
-}
-.roboto-medium {
-    font-family: @roboto;
-    font-weight: 500;
 }
 .roboto-bold, .roboto-black {
     font-family: @roboto;

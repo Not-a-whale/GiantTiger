@@ -88,7 +88,9 @@
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             {% endif %}
 
-            {% block stylesheets %}
+			<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Roboto:400,500&display=swap" rel="stylesheet">
+
+			{% block stylesheets %}
                 <link rel="stylesheet" href="{% make_url "stylesheet" "/stylesheets/vendor/bootstrap-3.3.7/css/bootstrap.min.css" %}" title="default" />
                 <link rel="stylesheet" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" />
                 <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/vendor/font-awesome/css/font-awesome.min.css" %}" media="all">

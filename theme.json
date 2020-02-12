@@ -842,7 +842,8 @@
   "phoneNumberEnabled": true,
   "phoneNumberLength": 10,
   "preselectCountryCode": "US",
-  "primaryFont": "Source Sans Pro",
+  "primaryFont": "Roboto",
+  "secondaryFont": "Montserrat",
   "productCarouselImageWidth": 84,
   "productCarouselSize": 8,
   "productImageDirectoryMaxWidth": 265,
@@ -880,7 +881,7 @@
   "stateNameLength": 40,
   "storesPageSize": 5,
   "suggestPriorSearchTerms": true,
-  "textColor": "#444444",
+  "textColor": "#333333",
   "usStates": [
     {
       "abbreviation": "AL",

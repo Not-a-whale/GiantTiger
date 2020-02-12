@@ -51,17 +51,16 @@
 }
 
 .primary-btn {
-    background-color: @gray-lighter;
+    background-color: @primaryBtnColor;
     .border-radius(4px);
     text-transform: capitalize;
-    border: 1px solid @inputBorder;    
-    font-weight: normal;
+    border: 1px solid @primaryBtnColor;
+    font-size: @fontSize;
+    font-weight: 500;
+    height: 44px;
+    border-radius: 0px;    
+    text-transform: uppercase;
     .button-prop(); 
-    &:hover{
-        background-color: @btnGrayDarkHover;
-        color: @colorGray;
-        text-decoration: none;
-    }
     .button-focus();
 }
 .secondary-btn {
@@ -69,7 +68,11 @@
     cursor: pointer;
     background: @secondaryBtnColor;
     border: 1px solid @secondaryBtnColor;    
+    font-size: @fontSize;
+    font-weight: 500;
     border-radius: 0px;    
+    height: 44px;
+    text-transform: capitalize;
     .button-prop(); 
     .button-focus();
 }
