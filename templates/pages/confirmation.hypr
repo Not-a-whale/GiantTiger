@@ -20,7 +20,7 @@
       {% endif %}
     {% else %}
       <div style="height: 50px;">
-        <img class="defaultLogo" src="/resources/images/logo-sm.png" alt="Store logo"/>
+		<img src="/resources/images/logo-sm.png" alt="Giant Tiger"/>
       </div>
     {% endif %}
 </div>

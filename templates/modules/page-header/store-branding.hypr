@@ -10,7 +10,7 @@
 	{% endif %}
 	</a>
 {% else %}
-	<a class="{% if not themeSettings.globalPageHeaderLogoSM %}logo {% endif %}hidden-xs" href="/" title="{{ siteContext.generalSettings.websiteName }}">
-		<img class="defaultLogo" src="/resources/images/logo-sm.png" alt="Store logo"/>
+	<a class="{% if not themeSettings.globalPageHeaderLogoSM %}logo {% endif %}" href="/" title="{{ siteContext.generalSettings.websiteName }}">
+		<img src="/resources/images/logo-sm.png" alt="Giant Tiger"/>
 	</a>
 {% endif %}

@@ -13,6 +13,11 @@
                     {% endblock store-branding %}
                 </div>
             {% endblock header-sitelogo %}
+            <div class="ml-stores-wrapper">
+                {% block stores-box %}
+                    {% include "modules/page-header/stores-box" %}
+                {% endblock stores-box %}             
+            </div>
             <div class="ml-header-search-wrapper">
                 {% block search-box %}
                     {% include "modules/page-header/search-box" %}
@@ -28,6 +33,12 @@
                     {% include "modules/page-header/global-cart-container" %}
                 {% endblock global-cart-container %}              
             </div>
+			<div class="ml-header-country-wrapper mz-pageheader-top-row-country-selector country-selector-right">
+				{% block country-selector %}
+					{% include "modules/page-header/country-selector" %}
+				{% endblock country-selector %}     
+			</div>
+			
         </div>
     </div>
 </header>
