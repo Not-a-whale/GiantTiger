@@ -350,3 +350,27 @@
 .clear {
 	clear:both;
 }
+// Breakpoints
+// ------------------------- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+@highdensity:         ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+                      ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+                      ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+			                ~"only screen and (min-device-pixel-ratio: 1.5)";
+
+@mobile:              ~"only screen and (max-width: 767px)";
+
+@mobile-sm-bootstrap: ~"only screen and (max-width : 480px)";
+
+@tablet:              ~"only screen and (max-width: 1024px)";
+
+@tablet-only:         ~"only screen and (min-width: 768px) and (max-width: 1024px)";
+
+@desktop-bootstrap:   ~"only screen and (max-width: 992px)";
+
+@desktop:             ~"only screen and (max-width: 1199px)";
+
+@desktop-only:        ~"only screen and (min-width: 1025px) and (max-width: 1199px)";
+
+@desktop-xl:          ~"only screen and (min-width: 1200px)";
+
+@desktop-only-md:	  ~"only screen and (min-width: 1025px)";
