@@ -56,3 +56,92 @@
         }
     }
 }
+//Sticky header
+.mz-pageheader.affix{
+    top: 0;
+    position: sticky;
+    z-index: 9999;
+    border-bottom: 8px solid @primaryColor;
+
+    @media (min-width:1441px){
+        .ml-header-content {
+            .ml-header-links-wrapper{
+                .mz-utilitynav-item.navbar-collapse-control{
+                    display:block;
+                    position:absolute;
+                    left:-1190px;
+                    top: 5px;
+                    font-stretch: unset;
+                    font-size:30px;
+                }
+            }
+            .ml-header-logo-wrapper{
+                left: 51px;
+            }
+            .ml-stores-wrapper{
+                left: 28%;
+            }
+            .ml-header-search-wrapper{
+                left: 47%;
+            }
+            .ml-header-links-wrapper{
+                right: 60px;
+                .mz-utilitynav-item.user-login{
+                    display: none;
+                }
+            }
+            .country-selector-right{
+                    display: none;
+            }
+            .ml-header-global-cart-wrapper{
+                right: 0;
+            }
+        }        
+    }    
+    @media (min-width:992px) and (max-width:1440px){
+        .ml-header-content {
+            .ml-header-links-wrapper{
+                .mz-utilitynav-item.navbar-collapse-control{
+                    display:block;
+                    position:fixed;
+                    left: 8px;
+                    top: 35px;
+                    font-stretch: unset;
+                    font-size:30px;
+                }
+            }
+            .ml-header-logo-wrapper{
+                left: 40px;
+            }
+            .ml-stores-wrapper{
+                left: 28%;
+            }
+            .ml-header-search-wrapper{
+                left: 50%;
+                width: 28%;
+            }
+            @media (min-width:992px) and (max-width:1140px){
+                .ml-stores-wrapper{
+                    left: 28%;
+                    width: 200px;
+                }
+                .ml-header-search-wrapper{
+                    left: 48%;
+                    width: 25%;
+                }
+            }
+            .ml-header-links-wrapper{
+                right: 60px;
+                .mz-utilitynav-item.user-login{
+                    display: none;
+                }
+            }
+            .country-selector-right{
+                    display: none;
+            }
+            .ml-header-global-cart-wrapper{
+                right: 0;
+            }
+        }
+    }
+}

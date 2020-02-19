@@ -3,7 +3,7 @@
         {% include "modules/page-header/global-header-include" %}
     {% endblock store-branding %}
 </div>
-<header class="mz-pageheader{% if themeSettings.bannerImageEnabled %} mz-pageheader-hasbanner {% endif %}">
+<header class="mz-pageheader{% if themeSettings.bannerImageEnabled %} mz-pageheader-hasbanner {% endif %}" data-spy="affix" data-offset-top="140">
     <div class="container">
         <div class="ml-header-content">
             {% block header-sitelogo %}
