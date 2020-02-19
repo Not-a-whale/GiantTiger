@@ -19,7 +19,7 @@
         Use require_script to load AMD modules that are wrapped in define() or require() function calls.
         {% endcomment %}
         {% require_script "modules/login-links" %}
-        <li class="mz-utilitynav-item">
+        <li class="mz-utilitynav-item gt-vip">
 			<a href="#" alt="GT VIP"><img src="/resources/images/GT-VIP.png" alt="GT VIP" /></a>
 		</li>
         {% if not user.isAnonymous %}
