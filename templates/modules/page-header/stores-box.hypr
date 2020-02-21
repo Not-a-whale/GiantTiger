@@ -1,7 +1,8 @@
 ﻿<div class="stores">
 	<div id="gianttigerStoreName">
 			<a href="#">
-			<strong>Sainte-Marthe-sur-le-Lac</strong><br>
-			1380, boulevard Monseigneur-Langlois</a>
+			<span class="store-title">Sainte-Marthe-sur-le-Lac</span><br>
+			<span class="store-address">1380, boulevard Monseigneur-Langlois</span>
+			</a>
 	</div>
 </div>

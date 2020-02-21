@@ -1,4 +1,5 @@
-﻿<div id="global-header-wrapper">
+﻿{% require_script "modules/page-header/search-header" %}
+<div id="global-header-wrapper">
     {% block store-branding %}
         {% include "modules/page-header/global-header-include" %}
     {% endblock store-branding %}
@@ -18,6 +19,9 @@
                     {% include "modules/page-header/stores-box" %}
                 {% endblock stores-box %}             
             </div>
+			<button class="mz-searchbox-button-top">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
             <div class="ml-header-search-wrapper">
                 {% block search-box %}
                     {% include "modules/page-header/search-box" %}

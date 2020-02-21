@@ -49,28 +49,36 @@
             .ml-header-global-cart-wrapper {
                 position: absolute;
                 top: auto;
-                right: 45px;
-                bottom: 32px;
+                right: 34px;
+                bottom: 51px;
                 left: auto;
                 background: inherit;
                 border: 0;
                 padding: 2px 0 5px 5px;
 	            .ml-header-global-cart-label {
                     display: inline-block;
-                    font-weight: 500;
+                    font-weight: 400;
 					color: @colorMediumGrey;
                     padding-bottom: 5px;                    
 	            }                
             }
 			.country-selector-right {
 				position: absolute;
-				right: 0;
-				top: 47px;
+				right: 5px;
+				top: 46px;
+				left: auto;
+				bottom: auto;
 				a{
 					font-size: 12px;
-					font-weight: 500;
+					font-weight: 400;
 					color: @colorMediumGrey;
-					padding-left: 10px;
+					padding-left: 12px;					
+					text-decoration: none;
+					border-left:1px solid @globalIconOffState;
+				}
+				:hover{
+					text-decoration: underline;
+					color: @black;
 				}
 			}
         }
