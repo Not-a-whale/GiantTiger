@@ -1,8 +1,76 @@
 ﻿<div class="stores">
 	<div id="gianttigerStoreName">
-			<a href="#">
-			<span class="store-title">Sainte-Marthe-sur-le-Lac</span><br>
-			<span class="store-address">1380, boulevard Monseigneur-Langlois</span>
+			<a href="javascript:void(0);">
+				<span class="store-title">Sainte-Marthe-sur-le-Lac</span><br>
+				<span class="store-address">1380, boulevard Monseigneur-Langlois</span>
 			</a>
+	</div>
+</div>
+<!-- My Store List -->
+<div id="gianttigerGlobalFlyout" style="display:none">
+	<div class="flyoutbackground">
+					
+		<div id="gianttigerSevedStore" class="dl-store-name">
+			<div id="gianttigerStoreCode"><span class="store-label">MY STORE:</span>  <span class="store-name">Sainte-Marthe-sur-le-Lac</span></div>
+			<div id="gianttigerStoreNameLinkName">1380, boulevard Monseigneur-Langlois</div>
+			<div id="gianttigerStoreCity">Valleyfield,QC</div>
+			<div id="gianttigerZipCode">J6S 1E3</div>
+			<div id="gianttigerPhone">613-526-2416</div>
+			<div class="dl-opentoday">Open today 8:00am - 9:00pm</div>
+			<a class="dl-holidayhours">See store details for holiday hours.</a>				
+		</div>
+		<div class="changeStore">
+			<form class="form">
+			  <div class="form-group">
+				<button type="submit" class="primary-btn ml-change-store">CHANGE STORE</button>
+				<div class="store-container">
+					<input type="text" class="form-control" id="storesID" placeholder="Enter Postal Code" maxlength="7">
+				</div>
+			  </div>
+			</form>
+		</div>
+
+
+
+		<div id="gianttigerGlobalSearchResult">
+			<div class="store-list">
+				<div><span class="store-name">Giant Tiger #237</span></div>
+				<div id="gianttigerStoreNameLinkName">1021 St. Laurent Boulevard</div>
+				<div id="gianttigerStoreCity">Ottawa, ON K1K 3B1</div>
+				<div id="gianttigerPhone"><span class="call_icon"></span>450-377-9807</div>
+
+				<button class="btn-secondary save-my-store-btn">Save as my store</button>
+			</div>			
+			<div class="store-list">
+				<div><span class="store-name">Giant Tiger #92</span></div>
+				<div id="gianttigerStoreNameLinkName">2950 Bank Street, Unit 12</div>
+				<div id="gianttigerStoreCity">Ottawa, ON K1T 1N8</div>
+				<div id="gianttigerPhone"><span class="call_icon"></span>613-248-2312</div>
+
+				<button class="btn-secondary save-my-store-btn">Save as my store</button>
+			</div>			
+			<div class="store-list">
+				<div><span class="store-name">Giant Tiger #1</span></div>
+				<div id="gianttigerStoreNameLinkName">98 George Street</div>
+				<div id="gianttigerStoreCity">Ottawa, ON K1N 5W2</div>
+				<div id="gianttigerPhone"><span class="call_icon"></span>613-241-6733</div>
+
+				<button class="btn-secondary save-my-store-btn">Save as my store</button>
+			</div>			
+			<div class="store-list">
+				<div><span class="store-name">GTxpress #10</span></div>
+				<div id="gianttigerStoreNameLinkName">1085 Wellington Street West</div>
+				<div id="gianttigerStoreCity">Ottawa, ON K1Y 2Y4</div>
+				<div id="gianttigerPhone"><span class="call_icon"></span>613-722-9589</div>
+
+				<button class="btn-secondary save-my-store-btn">Save as my store</button>
+			</div>			
+			<!-- Store serach paging -->
+			<div class="store-list-control">
+				<a href="javascript:void();" class="store-prev">< Previous</a>
+				<a href="javascript:void();" class="store-next">Next ></a>
+			</div>
+		</div>
+		
 	</div>
 </div>

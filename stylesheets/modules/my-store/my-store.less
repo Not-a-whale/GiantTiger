@@ -146,3 +146,179 @@
     margin-top: 6px;
     margin-bottom: 0;
 }
+//Global Stores Drop Down
+.stores:hover~#gianttigerGlobalFlyout, #gianttigerGlobalFlyout:hover{ 
+    padding: 4px;
+    width:328px;
+    position: absolute;
+    background-color: @white;
+    margin-top: 30px;
+    z-index: 1000001;
+    color: @black;
+    font-size: 14px;
+    text-align: left;
+    top: 12px;
+    left: -15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    border: 2px solid #d6d6d6;
+    display:block !important;
+}
+.stores{
+    padding-bottom: 10px;
+}
+    
+    #gianttigerSevedStore{
+        padding: 15px;
+        color: @black;
+        border-bottom: 3px solid @white;    
+
+        #gianttigerStoreCode{
+            margin-bottom: 15px; 
+
+            span.store-label, span.store-name{
+               .roboto-medium();
+               color: @black;
+            }
+            span.store-label{
+               font-size: 14px;
+            }
+            span.store-name{
+                font-weight: bold;
+                font-size: 16px;
+
+            }
+        }
+        .dl-opentoday{
+            .roboto-medium();
+            color: @black;
+            font-size: 14px;            
+        }
+        a.dl-holidayhours{
+            text-decoration: underline;
+            font-size: 12px;
+            margin-top: 7px;
+        }
+        #gianttigerPhone{
+            .roboto-medium();
+            color: @black;
+            padding: 15px 0;
+        }
+        #gianttigerPhone:before {
+            position: relative;
+            top: 0;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: none;
+            margin-left: 0px;
+            margin-right:10px;
+            font-size: 20px;
+            color: @black;
+            content: "\f2a0";
+        }
+    }
+    .changeStore{
+        padding: 1px 15px;
+        height: 78px;
+        border-bottom: 3px solid @white;    
+    }
+    #gianttigerGlobalFlyout .flyoutbackground{
+        background: @backgroundGrey;
+        color: @black
+    }
+    .ml-change-store{
+        .roboto-medium();
+        height: 44px;
+        float: right;
+        font-weight: bold;
+        border: none;
+    }
+    .store-container{
+        margin-right:129px;
+        margin-left: 1px;
+        position: absolute;
+        width: 159px;
+
+        input#storesID{
+            height: 44px;
+            border-radius: 0;
+            border-right: 0;
+        }
+    }
+#gianttigerGlobalSearchResult{
+    background: @white;
+    padding: 18px  20px;
+    max-height: 380px;
+    overflow-y: scroll;
+
+        @media @mobile{
+            max-height: 230px;
+        }
+    .store-list{
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid @outlinesColor;
+
+        .save-my-store-btn{
+            .roboto-medium();
+            font-weight: bold;
+            font-size: 14px;
+            color: @black;
+            text-decoration: underline;
+            width: 172px;
+            height: 44px;
+            margin-top: 20px;
+        }
+        .store-name{
+            .roboto-medium();
+            font-weight: bold;
+            font-size: 16px;
+            color: @black;
+            display: block;
+            padding-bottom: 7px;
+        }
+        #gianttigerStoreNameLinkName, #gianttigerStoreCity, #gianttigerPhone{
+            .roboto-regular();
+            font-size: 14px;
+            color: @colorMediumGrey;
+        }
+        #gianttigerPhone{
+            padding-top: 15px;
+        }
+        #gianttigerPhone:before {
+            position: relative;
+            top: 0;
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: none;
+            margin-left: 0px;
+            margin-right:10px;
+            font-size: 20px;
+            color: @colorMediumGrey;
+            content: "\f2a0";
+        }
+    }
+    .store-list-control{
+        .store-prev{
+            float: left;
+            text-decoration: underline;
+        }
+        .store-next{
+            float: right;
+            text-decoration: underline;
+        }
+    }
+    &::-webkit-scrollbar {
+      width: .6em;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: @outlinesColor;
+    }
+} 
