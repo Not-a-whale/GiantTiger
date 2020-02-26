@@ -133,6 +133,11 @@
                 {% include "modules/site-nav" %}
             {% endblock site-nav %}
 
+            {% block global-header-include %}
+				{% include "modules/page-header/global-header-include" %}
+            {% endblock global-header-include %}
+
+
             <div role="main" id="page-content" class="mz-l-pagecontent">
                 <div class="container">
                     <div class="row">
