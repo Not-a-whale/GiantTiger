@@ -11,5 +11,237 @@
         a {
             color: white
         }
-    }   
+    }
 }
+//Global include footer
+.mz-pagefooter.ml-global-footer {
+    padding: 50px 0;
+    color: @black;
+    background: @white;
+    border-top: 3px solid #F2F2F2;
+}
+
+footer, .copyright-footer{
+    background: #F0F0F0; 
+}
+footer{
+    .regular-footer.mini-footer-off{
+        margin-top: 15px;
+    }
+    .ml-footer-links-section{
+        border-bottom: 2px solid @white;
+
+        h4{
+            font-size: 16px;
+            font-weight: 500;
+            padding-bottom: 5px;
+            color: @black;
+            border-bottom: 2px solid @white;
+        }
+        .footerItem > a{
+            font-size: 14px;
+            font-weight: 500;
+            color: @black;
+            line-height: 32px;
+
+        }
+        .show-more{
+            border: none;
+            padding-left: 0;
+            display: block;
+            cursor: pointer;
+            .view-more, .view-less{
+                font-size: 14px;
+                font-weight: 500;
+                color: #000;
+                line-height: 32px;
+            }
+            .view-more{
+                display: none;
+            }
+            .view-less{
+                display: inline-block;
+            }
+            &:after {
+                content: "\f068";
+                font-family: FontAwesome;
+                position: relative;
+                top: 10px;
+                float:right; 
+                font-size: 14px;
+                color: @black;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        .show-more.collapsed{
+            .view-more{
+                display: inline-block;
+            }
+            .view-less{
+                display: none;
+            }
+            &:after {
+                content: "\f067";
+            }
+        }
+    }
+
+    .weekly-flyer-wrapper{
+        border-bottom: 2px solid @white;
+        margin-bottom: 15px;
+
+        .store-coupon-sign-up{
+
+            .fa.fa-envelope{
+                display: inline-block;
+                font-size: 48px;
+            }
+            h4{
+                font-size: 24px;
+                color: @black;
+                font-weight:  bold;
+                display: inline-block;
+                padding-left: 15px;
+                
+                small{
+                    font-size: 16px;
+                    font-size: 400;
+                    color: @black;
+                }
+            }
+        }
+        .weekly-flyer-text{
+            display: inline-block;
+            max-width: 295px;
+            color: @black;
+            font-size: 15px;
+            font-weight: 500;
+            padding-bottom: 15px;
+        }
+        .weekly-flyer-signup-button{
+            display: inline-block;
+            max-width: 125px;
+            vertical-align: top;
+
+            .primary-btn{
+                height: 44px;
+                display: block;
+                line-height: 33px;
+                width: 125px;
+                border-radius: 0;
+                margin-top: 10px;
+                margin-left: 30px;
+                font-weight: bold;
+                font-size: 14px;
+            }
+        }
+    }
+    //Store Locator
+    #footerStoreLocator{
+        border-bottom: 2px solid @white;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+        .control-label{
+            font-size: 16px;
+            font-weight: 500; 
+        }
+        #footerZipCodeInput{
+            height: 44px;
+            border-radius: 0;
+            box-shadow: none;
+            border: 1px solid @outlinesColor;
+        }
+        #btnFindStore{
+            font-size: 14px;
+            font-weight: bold;
+            height: 44px;
+            border-radius: 0;
+            border: none;
+        }
+    }
+    //Social Links
+    .social-links{
+        border-bottom: 2px solid @white;
+        padding-bottom: 25px;
+        margin-bottom: 15px;
+
+        .ml-icon-instagram{
+            width: 30px;
+            margin-top: -5px;
+            margin-left: 1px;
+        }
+        a{
+            outline: none;
+
+            &:focus, &:hover{
+                text-decoration: none;
+            }
+        }        
+    }
+
+    //Primary color circle icons
+    .circle-icon {
+        display: inline-block;
+        height: 56px;
+        width: 56px;
+        margin-top: 5px;
+        line-height: 50px;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        background-color: white;
+        vertical-align: top;
+        color: #0b0b0b;
+        text-align: center;
+        font-size: 32px;
+        border: 4px solid @primaryColor;
+        margin-right: 20px;
+    }
+    .ml-footer-download-app-links{
+        .ml-Check-out-our-mobile-apps{
+            font-size: 16px;
+            font-weight: 500;
+            color: @black;
+        }
+        .download-icons{
+            padding-top: 5px;
+        }
+    }
+}
+.copyright-footer{
+    .mz-pagefooter-copyright{
+        font-size: 14px;
+        color: @black;        
+    }
+}
+.footer-bottom-links{
+    background: #f0f0f0;
+    padding-bottom: 50px;
+    margin-bottom: -25px;
+
+    .mz-footer-bottom-links{
+        float: right;
+        margin: 5px 0;
+
+        li{
+            display: inline-block;
+         
+            > a{
+                font-size: 14px;
+                color: @black;
+                min-width: 200px;
+                outline: none;
+                padding-left: 7px;
+            }
+        }
+        li:first-child:after{
+            content:"";
+            margin-left:10px;
+            border-right:1px solid black;
+        }
+    }
+}   

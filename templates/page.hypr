@@ -167,19 +167,36 @@
             {% endblock page-footer %}
 
             {% block copyright-footer %}
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="mz-pagefooter-copyright" id="copyright">
-                                <span class="mz-pagefooter-copyrighttext">
-                                    &copy; {% now Y %}
-                                </span>
-                                {{ siteContext.generalSettings.websiteName }}. {% dropzone "copyright" scope="site" %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div class="copyright-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="mz-pagefooter-copyright" id="copyright">
+									<span class="mz-pagefooter-copyrighttext">
+										&copy; {% now Y %}
+									</span>
+									{{ siteContext.generalSettings.websiteName }} {{ labels.storeLimited }} {% dropzone "copyright" scope="site" %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
             {% endblock copyright-footer%}
+
+            {% block footer-bottom-links %}
+				<div class="footer-bottom-links">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<ul class="mz-footer-bottom-links">
+								  <li><a href="/privacy-policy">{{ labels.privacyPolicy }}</a></li>
+								  <li><a href="/terms-conditions">{{ labels.termsConditions }}</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+            {% endblock footer-bottom-links %}
 
             {% include "modules/common/message-bar" %}
         </div>
