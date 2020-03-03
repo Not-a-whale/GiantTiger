@@ -6,10 +6,18 @@
 image: node:10.15.3
 
 pipelines:
-  default:
-    - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+    branches:
+        develop:
+            - step:
+                name: Build and Deploy to GiantTiger-QA
+                deployment: test
+                script:
+                  - node --version
+                  - npm --version
+                  - npm install -g npm 
+                  - npm install
+                  - npm install -g grunt-cli
+                  - npm install grunt --save-dev
+                  - cp mozu.config.json.gt-qa mozu.config.json
+                  - grunt
+                  - grunt newer-clean

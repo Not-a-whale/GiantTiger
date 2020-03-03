@@ -1,0 +1,9 @@
+{
+  "baseUrl": "https://home.mozu.com",
+  "developerAccountId": 6630,
+  "developerAccount": {
+    "emailAddress": "trp-qa@deplabs.com",
+    "password": "@Deplabs2019"
+  },
+  "workingApplicationKey": "GTiger.GiantTiger_Theme.1.0.0.Release"
+}
