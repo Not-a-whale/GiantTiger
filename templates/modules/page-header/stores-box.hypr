@@ -22,10 +22,14 @@
 		<div class="changeStore">
 			<form class="form">
 			  <div class="form-group">
-				<button type="submit" class="primary-btn ml-change-store">CHANGE STORE</button>
-				<div class="store-container">
-					<input type="text" class="form-control" id="storesID" placeholder="Enter Postal Code" maxlength="7">
-				</div>
+				  <div class="input-group">
+					<div class="store-container">
+						<input type="text" class="form-control" id="storesID" placeholder="Enter Postal Code" maxlength="7">
+					</div>
+					<span class="input-group-btn">
+						<button type="submit" class="primary-btn ml-change-store">CHANGE STORE</button>
+					</span>
+				  </div>
 			  </div>
 			</form>
 		</div>
