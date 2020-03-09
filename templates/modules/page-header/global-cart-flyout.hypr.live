@@ -1,6 +1,10 @@
-<div class="arrow-up"></div>
+<!--<div class="arrow-up"></div>-->
+<div class="ml-global-cart-close">
+	<button type="button" id="globalCartCloseBtn" class="glyphicon glyphicon-remove ml-icon-close"></button>
+</div>
 {% if model.items.length>0 %}
 	<ul class="media-list">	
+			<!--
 			<div class="media heading-row">
 				<div class="media-left">
 					<h5 class="bold-text">item</h5>
@@ -17,7 +21,38 @@
 					</div>
 				</div>
 			</div>
-
+			-->
+			<div class="row total-amount-row">
+				<!--
+				<div class="col-xs-12 text-right">
+					<b>Subtotal: </b>
+					<span>{{ model.subtotal|currency }}</span>
+				</div>
+				-->
+				{% if model.orderDiscounts %}
+					{% for orderDiscount in model.orderDiscounts  %}
+					<div class="col-xs-12 text-right text-primary">
+						<b>{{ orderDiscount.discount.name }}</b>
+						<span> - {{ orderDiscount.impact |currency }}</span>
+					</div>
+					{% endfor %}
+				{% endif %}
+				{% comment %}
+				{% if model.items.length > themeSettings.globalCartMaxItemCount %}
+				<div class="col-xs-6 text-left ">
+					<a href="/cart"> {{model.items.length-themeSettings.globalCartMaxItemCount}} more item(s)... </a>
+				</div>
+				{% endif%}
+				{% endcomment %}
+				<div class="{% if model.items.length > themeSettings.globalCartMaxItemCount %}col-xs-12{% else %}col-xs-12{% endif %}">
+					<span class="estimated-total">Estimated Total: </span>
+					<span class="total-amount">{{ model.total|currency }}</span> 
+				{% if model.items.length > themeSettings.globalCartMaxItemCount %}
+					<span class="total-items"> - {{model.items.length-themeSettings.globalCartMaxItemCount}} ITEMS </span>
+				{% endif%}
+				</div>	    
+			</div>
+			<div class="media-scrollbar">
 		    {% for items in model.cartItems  %}
 		    	<div class="media">
 					<div class="media-left">
@@ -42,7 +77,15 @@
 						</a>
 					</div>
 					<div class="media-body">
-						<div class="col-xs-5 global-cart-padding">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-12 global-cart-padding"  >
+								{% include "modules/common/item-price" with item=items %}
+								</div>
+								<!--<div class="col-xs-5 price-amount-col">{% include "modules/common/item-total" with item=items isGlobalCart="true" %}</div>-->	
+							</div>
+						</div>
+						<div class="col-xs-12 global-cart-padding">
 							<h5 class="media-heading">
 								<a href="/p/{{items.product.productCode}}">
 									{{ items.product.name }}									
@@ -50,53 +93,26 @@
 							</h5>
 							{% if items.product.options %}
 								{% for option in items.product.options %}
-								<div><b>{{ option.name }}</b>  <span>{% if option.stringname %}{{ option.stringname }}{% else %}{{ option.value }}{% endif %}</span></div>
+								<div class="product-options">{{ option.name }}  <span>{% if option.stringname %}{{ option.stringname }}{% else %}{{ option.value }}{% endif %}</span></div>
 								{% endfor %}
 							{% endif %}	
-							<div><b>{{ labels.qty }} </b>  <span>{{ items.quantity }}</span></div>
-						</div>
-						<div class="col-xs-7">
-							<div class="row">
-								<div class="col-xs-7 global-cart-padding"  >
-								{% include "modules/common/item-price" with item=items %}
-								</div>
-								<div class="col-xs-5 price-amount-col">{% include "modules/common/item-total" with item=items isGlobalCart="true" %}</div>	
-							</div>
+							<div class="label-qty">{{ labels.qty }}:   <span>{{ items.quantity }}</span></div>
 						</div>
 					</div>
 				</div>
 		    {% endfor %}
+			</div>
 	</ul>
-	<div class="row total-amount-row">
-	    <div class="col-xs-12 text-right">
-	    	<b>Subtotal: </b>
-	    	<span>{{ model.subtotal|currency }}</span>
-	    </div>
-  	    {% if model.orderDiscounts %}
-	  	    {% for orderDiscount in model.orderDiscounts  %}
-	  	    <div class="col-xs-12 text-right text-primary">
-	  	    	<b>{{ orderDiscount.discount.name }}</b>
-		    	<span> - {{ orderDiscount.impact |currency }}</span>
-		    </div>
-	  	    {% endfor %}
-	    {% endif %}
-	    {% if model.items.length > themeSettings.globalCartMaxItemCount %}
-	    <div class="col-xs-6 text-left ">
-	    	<a href="/cart"> {{model.items.length-themeSettings.globalCartMaxItemCount}} more item(s)... </a>
-	    </div>
-	    {% endif%}
-	    <div class="{% if model.items.length > themeSettings.globalCartMaxItemCount %}col-xs-6{% else %}col-xs-12{% endif %} text-right">
-	    	<b>Total: </b>
-	    	<span>{{ model.total|currency }}</span>
-	    </div>	    
-	</div>
 	<div class="row">
-		<div class="col-xs-8">
-			<a href="/cart" class="primary-btn view-cart-btn">{{ labels.openCart }}</a>
+		<div class="col-xs-12">
+			<a href="/cart" class="primary-btn view-cart-btn btn-block">{{ labels.openCart }}</a>
+			<!--
 			{% if (themeSettings.globalCartEnableSaveCart && user.isAnonymous)  %}
 				<button data-mz-action="openLiteRegistration" class="primary-btn">Save Cart</button>
 			{% endif %}
+			-->
 		</div>
+		<!--
 		<div class="col-xs-4 text-right">
 			{% if not user.isAnonymous %}
   				<form method="post" value="" action="{{ pageContext.secureHost }}/cart/checkout">
@@ -106,13 +122,20 @@
  				<button type="submit" class="mz-button btn btn-default" data-mz-action="checkoutGuest">Checkout</button>
 			{% endif%}
 		</div>
+		-->
 	</div>
+	
+	<!-- BOPIS product from site admin - global dropzone widget --> 
+	<div class="bopis-container"></div>
 
+	{% comment %}
 	{% if themeSettings.globalCartRelatedProducts %}
 		<h5>You may also like</h5>
 		<div class="related-products"></div>
 	{% endif %}
-	<div class="row text-center" style="padding-top: 15px;">
+	{% endcomment %}
+	
+	<div class="row text-center">
 		{% if themeSettings.globalCartEmptyBasketFooter %} 
 		  <a {% if themeSettings.globalCartEmptyBasketKickerLink %} href="{{ themeSettings.globalCartEmptyBasketKickerLink }}"{% else %} href="/home" {% endif %}>
 		  	<img src="{% make_url "image" themeSettings.globalCartEmptyBasketFooter.imageUrl with width=370 as_parameters %}"  />
@@ -130,3 +153,7 @@
 		{% endif %}		
 	</div>
 {% endif %}
+
+<div class="global-cart-footer">
+	{{ themeSettings.globalCartFooterText|safe }}
+</div>

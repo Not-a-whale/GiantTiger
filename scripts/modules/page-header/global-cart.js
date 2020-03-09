@@ -23,6 +23,9 @@ define([
         render: function() {
             var me = this;
             Backbone.MozuView.prototype.render.apply(this);
+
+			//Global cart BOPIS Products dropzone widget container content
+			$('.bopis-container').append($('.ml-global-cart-carousel').clone());
         },
         showRelatedProducts: function(productCollection) {
             var me = this;
@@ -79,10 +82,10 @@ define([
                 me.model.attributes = resp.data;
                 me.render();
                 if (showGlobalCart) {
-                    me.$el.show();
-                    setTimeout(function() {
-                        me.$el.attr('style', '');
-                    }, 5000);
+                    //me.$el.show();
+                    //setTimeout(function() {
+                        //me.$el.attr('style', '');
+                    //}, 5000);
                 }
                 if (globalCartRelatedProducts) {
                     me.showRelatedProducts(resp.data.items);
@@ -96,7 +99,14 @@ define([
         el: $('#global-cart'),
         model: new Model({})
     });
-    globalCartView.render();
+	globalCartView.render();	
+
+	$(document).on('click', "button#globalCartCloseBtn, .cart-backdrop", function (){
+		//$(".show-cart").removeClass();
+		$("#global-cart").hide();
+		$(".cart-backdrop").remove();
+	});
+		
     var GlobalCart = {
         update: function(showGlobalCart) {
             globalCartView.update(showGlobalCart);

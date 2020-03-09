@@ -611,6 +611,10 @@ require([
             if (cartitem && cartitem.prop('id')) {
                 //product.isLoading(true);
                 CartMonitor.addToCount(product.get('quantity'));
+				if ($(window).width() > 768) {
+					$("#global-cart").show();
+					$("body").append("<div class='cart-backdrop'></div>");
+				}
                 $('html,body').animate({
                     scrollTop: $('header').offset().top
                 }, 1000);
@@ -629,8 +633,8 @@ require([
                 if (product.get('options').length)
                     $("[data-mz-action='addToCart']").addClass('button_disabled');
                 $(".mz-productcodes-productcode").text(Hypr.getLabel('item')+" # " + product.get('productCode'));
-                if(!stopRedirect) {
-                    window.location.href = (HyprLiveContext.locals.pageContext.secureHost || HyprLiveContext.locals.siteContext.siteSubdirectory) + "/cart";
+                if (!stopRedirect) {
+                   //window.location.href = (HyprLiveContext.locals.pageContext.secureHost || HyprLiveContext.locals.siteContext.siteSubdirectory) + "/cart";
                 }
             } else {
                 product.trigger("error", { message: Hypr.getLabel('unexpectedError') });

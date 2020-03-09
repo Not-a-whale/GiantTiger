@@ -788,6 +788,7 @@
   "globalCartRelatedProducts": "true",
   "globalCartRelatedProductsSize": 5,
   "globalCartShowSubtotal": false,
+  "globalCartFooterText": "",
   "globalPageHeaderLogoSM": null,
   "globalPageHeaderLogoXS": null,
   "googleMapAPIKey": "",
@@ -1975,6 +1976,26 @@
       "product",
       "cart"
     ]
+  },
+  {
+      "id": "cartSection",
+      "displayName": "Bopis Products",
+      "displayTemplate": "bopis/bopis",
+      "editViewFields": [
+        {
+          "xtype": "panel",
+		  "fieldLabel": "Form HTML",
+          "name": "sectionTextField",
+          "items": [
+            {
+              "name": "bopisCartProducts",
+              "fieldLabel": "Global Cart BOPIS Products",
+              "xtype": "mz-input-text"
+            }
+          ]
+        }],
+        "icon": "/resources/admin/widgets/city-carousel-icon.png",
+        "validPageTypes": ["*"]
   },
   {
     "displayName": "Deal of the Day",

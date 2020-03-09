@@ -375,6 +375,12 @@
                     "fieldLabel": "Show Subtotal",
                     "xtype": "mz-input-checkbox",
                     "name": "globalCartShowSubtotal"
+                },
+                {
+                    "fieldLabel": "Global Cart Footer Text",
+                    "xtype": "mz-input-textarea",
+                    "name": "globalCartFooterText",
+					"width": "100%"
                 }
             ]
         },

@@ -1,0 +1,3 @@
+<div class="ml-global-cart-carousel">
+	{{ model.config.bopisCartProducts|safe }}
+</div>
