@@ -64,7 +64,8 @@
 				</div>
 				<div class="ml-footer-download-app-links">
 					{% if siteContext.generalSettings.websiteName=='Giant Tiger' %}
-						<div class="ml-Check-out-our-mobile-apps">Check out our mobile apps!</div>
+						<div class="ml-Check-out-our-mobile-apps hidden-xs">Check out our mobile apps!</div>
+						<div class="ml-Check-out-our-mobile-apps hidden-sm hidden-md hidden-lg">Download Our Apps</div>
 						<div class="download-icons">
 								<a href="https://www.apple.com/ios/app-store/" target="_blank">
 									<img src="/resources/images/EN_appstore.png" alt="Download on the App Store">
@@ -74,7 +75,8 @@
 								</a>
 						</div>
 					{% else %}
-					<div class="ml-Check-out-our-mobile-apps">Téléchargez l’application!</div>
+					<div class="ml-Check-out-our-mobile-apps hidden-xs">Téléchargez l’application!</div>
+					<div class="ml-Check-out-our-mobile-apps hidden-sm hidden-md hidden-lg">Téléchargez nos applications</div>
 					<div class="download-icons">
 							<a href="https://www.apple.com/ios/app-store/" target="_blank">
 								<img src="/resources/images/FR_appstore.png" alt="Download on the App Store">

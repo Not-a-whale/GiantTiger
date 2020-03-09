@@ -189,8 +189,8 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<ul class="mz-footer-bottom-links">
-								  <li><a href="/privacy-policy">{{ labels.privacyPolicy }}</a></li>
 								  <li><a href="/terms-conditions">{{ labels.termsConditions }}</a></li>
+								  <li><a href="/privacy-policy">{{ labels.privacyPolicy }}</a></li>
 								</ul>
 							</div>
 						</div>

@@ -192,7 +192,7 @@
   "enterReturnQuantity": "Please enter a quantity above 1 to return.",
   "enterReturnReason": "Please select a return reason.",
   "enterStoreCredit": "Enter Store Credit Number",
-  "enterZipCode": "Enter Zipcode",
+  "enterZipCode": "Enter Postal Code",
   "errorApology": "Sorry, an error occurred.",
   "errorDetail": "Our software encountered an error it couldn't resolve.",
   "everywhere": "Everywhere",
