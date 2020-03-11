@@ -47,9 +47,12 @@
 				<div class="{% if model.items.length > themeSettings.globalCartMaxItemCount %}col-xs-12{% else %}col-xs-12{% endif %}">
 					<span class="estimated-total">Estimated Total: </span>
 					<span class="total-amount">{{ model.total|currency }}</span> 
-				{% if model.items.length > themeSettings.globalCartMaxItemCount %}
-					<span class="total-items"> - {{model.items.length-themeSettings.globalCartMaxItemCount}} ITEMS </span>
-				{% endif%}
+					{% set totalQuantity=0 %}
+					{% for items in model.cartItems  %}
+						{%  set totalQuantity += items.quantity %}
+					{% endfor  %}
+					<span class="total-items"> - {{totalQuantity}} ITEM{% if totalQuantity > 1 %}S{% endif %} </span>
+
 				</div>	    
 			</div>
 			<div class="media-scrollbar">
@@ -82,7 +85,7 @@
 								<div class="col-xs-12 global-cart-padding"  >
 								{% include "modules/common/item-price" with item=items %}
 								</div>
-								<!--<div class="col-xs-5 price-amount-col">{% include "modules/common/item-total" with item=items isGlobalCart="true" %}</div>-->	
+								<!--<div class="col-xs-5 price-amount-col">{% include "modules/common/item-total" with item=items isGlobalCart="true" %}</div>-->
 							</div>
 						</div>
 						<div class="col-xs-12 global-cart-padding">
@@ -93,9 +96,9 @@
 							</h5>
 							{% if items.product.options %}
 								{% for option in items.product.options %}
-								<div class="product-options">{{ option.name }}  <span>{% if option.stringname %}{{ option.stringname }}{% else %}{{ option.value }}{% endif %}</span></div>
+								<div class="product-options">{{ option.stringValue }},</div>
 								{% endfor %}
-							{% endif %}	
+							{% endif %}							
 							<div class="label-qty">{{ labels.qty }}:   <span>{{ items.quantity }}</span></div>
 						</div>
 					</div>
