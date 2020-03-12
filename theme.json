@@ -240,6 +240,14 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
+      "id": "home-full-width",
+      "template": "home-full-width",
+      "title": "Home Page full width",
+      "userCreatable": true
+    },
+    {
+      "documentType": "web_page",
+      "entityType": "webpage",
       "id": "blank-splash-page",
       "template": "blank-splash-page",
       "title": "Blank Splash Page",
@@ -1130,7 +1138,27 @@
   "zipcodeLength": 10
 },
   "layoutWidgets":[
-  {
+   {
+      "id": "mz-1-col-max-width",
+      "category": "*",
+      "displayName": "1 Column max 1440px",
+      "displayTemplate": "base",
+      "defaultConfig": {
+       "title": "DropzoneMax",
+        "mz-col1": 100
+      },
+      "customEditor": "layout",
+      "icon": "/resources/admin/widgets/1-col_icon.png",
+      "validPageTypes": [
+        "*"
+      ],
+      "columns": [
+        {
+          "width": "100%"
+        }
+      ]
+    },
+   {
     "id": "mz-1-col",
     "category": "*",
     "displayName": "1 Column 100",

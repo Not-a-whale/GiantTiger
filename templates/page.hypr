@@ -139,7 +139,7 @@
 
 
             <div role="main" id="page-content" class="mz-l-pagecontent">
-                <div class="container">
+                <div class="{% if pageContext.cmsContext.template.path == 'home-full-width' %}container-full{% else %}container{% endif %}">
                     <div class="row">
                     <!--  {% block breadcrumbs %}
                         {% if themeSettings.showBreadcrumbs %}
