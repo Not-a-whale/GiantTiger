@@ -1,5 +1,6 @@
 ﻿<nav class="mz-sitenav collapse" id="ml-nav" aria-label="Site navigation main (desktop)">
     <div class="container">
+	
       <ul class="mz-sitenav-list"
           data-mz-contextify='.mz-sitenav-link[href="{{ navigation.currentNode.url }}"]'
           data-mz-contextify-attr='class'
@@ -13,28 +14,38 @@
                 {% if link.items %}
                 <!--div class="arrow-up"></div-->
                 <div class="mz-sitenav-sub-container">
-                  {% if link.items %}
-                    <div class="row">
-                        {% with "id eq {0}"|string_format(link.originalId) as filter %}
-                            {% include_entities "modules/category-attributes" listFQN=themeSettings.categoryEntityName filter=filter %}
-                        {% endwith %}
-                        <div class="sub-level-col col-sm-3">
-                        {% for subsublink in link.items %}
-                            {% if not subsublink.isHidden and not subsublink.isEmpty %}
-                                {% with "id eq {0}"|string_format(subsublink.originalId) as filter %}
-                                    {% include_entities "modules/category-header-attribute" listFQN=themeSettings.categoryEntityName filter=filter %}
-                                {% endwith %}
-                                <div class="mz-sitenav-item sub-level-li">
-                                    <a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|safe }}</a>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                        </div>
-                    </div>
-                {% endif %}
+					{% if link.items %}
+					<div class="sub-level-wrapper container">
+						<div class="sub-level-inner">
+							{% for subsublink in link.items %}
+								{% if not subsublink.isHidden and not subsublink.isEmpty %}
+								<div class="sub-level-li">
+									{% with "id eq {0}"|string_format(subsublink.originalId) as filter %}
+										{% include_entities "modules/category-header-attribute" listFQN=themeSettings.categoryEntityName filter=filter %}
+									{% endwith %}
+									<div class="mz-sitenav-link-wrapper">
+										<a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|safe }}</a>
+									</div>
+										
+									{% for subsubsublink in subsublink.items %}  
+										{% if not subsubsublink.isHidden and not subsubsublink.isEmpty %}
+										<div class="sub-sub-level-li">
+											<a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsubsublink.url}}">{{ subsubsublink.name|safe }}</a>
+										</div>
+										{% endif %}
+									{% endfor %}
+								</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="promo-category">
+							{% with "id eq {0}"|string_format(link.originalId) as filter %}
+								{% include_entities "modules/category-attributes" listFQN=themeSettings.categoryEntityName filter=filter %}
+							{% endwith %}
+						</div>
+					{% endif %}
+					</div>
                 </div>
-
-
                 {% endif %}
               </div>
             </li>
