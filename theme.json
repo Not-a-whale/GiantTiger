@@ -2294,6 +2294,23 @@
     ]
   },
   {
+    "id": "top-deals-carousel-widget",
+    "displayName": "Top Deals carousel",
+    "displayTemplate": "misc/top-deals-carousel",
+    "defaultConfig": {},
+    "icon": "/resources/admin/widgets/city-carousel-icon.png",
+    "validPageTypes": [
+      "*"
+    ],
+    "editViewFields": [
+      {
+        "fieldLabel": "Select Products",
+        "name": "products",
+        "xtype": "mz-input-productmulti"
+      }
+    ]
+  },
+  {
     "defaultConfig": {
       "template": "modules/product/recent-product-list-gorsuch",
       "title": "Recently Viewed Items"

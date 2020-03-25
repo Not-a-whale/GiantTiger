@@ -1,0 +1,26 @@
+  {% if model.items %}
+  <div class="product-carousel-listing">
+  <!-- Swiper -->
+    <div class="swiper-container ">
+      <div class="swiper-wrapper">
+      {% for prod in model.items %}
+	  
+        <div class="swiper-slide product-item">
+			<div class="item {% if forloop.first %} {% endif %}">
+				<a href="{% make_url "product" prod %}" >
+					<img src="{% make_url "image" prod.mainImage with max=600 %}" {% if prod.mainImage.altText %}alt="{{ prod.mainImage.altText }}"{% endif %} style="margin:0 auto"/>
+					<div class="product-info">
+						<span class="product-title">{{prod.content.productName}}</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+	  {% endfor %}
+       </div>
+    </div>
+        <div class="swiper-button-next" id="swiper_meta_name_next"><span class="fa fa-angle-right"></span></div>
+        <div class="swiper-button-prev" id="swiper_meta_name_prev"><span class="fa fa-angle-left"></span></div>
+    </div>
+    {% require_script "modules/product/product-carousel-swiper" %}
+ {% endif %}
