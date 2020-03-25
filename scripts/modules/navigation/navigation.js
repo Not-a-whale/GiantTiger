@@ -88,6 +88,15 @@ define([
                     currentSubItem.addClass('opened');
                 }
             });
+			$('#mobileMenuCloseBtn').on('click', function(){
+				$('#ml-nav').animate({"left":"-1000px"}, "slow");
+				$('body').removeClass('modal-open');
+			});
+			$('.mz-utilitynav-link').on('click', function(){
+				$('#ml-nav').animate({"left":"0"}, "slow");
+				$('body').addClass('modal-open');
+			});
+
         } 
         
         if (!mobileMarker) {

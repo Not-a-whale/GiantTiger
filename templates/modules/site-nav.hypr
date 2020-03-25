@@ -1,6 +1,52 @@
-﻿<nav class="mz-sitenav collapse" id="ml-nav" aria-label="Site navigation main (desktop)">
+﻿<nav class="mz-sitenav" id="ml-nav" aria-label="Site navigation main (desktop)">
     <div class="container">
-	
+		<div class="mz-mobile-utilitynav-items">
+			<button type="button" id="mobileMenuCloseBtn" class="glyphicon glyphicon-remove ml-icon-close"></button>
+			<div class="lite-registration-wrapper">
+				<a class="login-link-text" data-toggle="modal" data-mz-action="lite-registration"><span class="fa fa-user"></span> Sign In | Create Account</a>
+			</div>
+			
+			<div class="store-wrapper">
+				<div id="gianttigerGlobalNavFlyout">
+					<div class="flyoutbackground">
+									
+						<div id="gianttigerSevedStore" class="dl-store-name">
+							<div id="gianttigerStoreCode"><span class="store-label">MY STORE:</span>  <span class="store-name">Sainte-Marthe-sur-le-Lac</span></div>
+							<div id="gianttigerStoreNameLinkName">1380, boulevard Monseigneur-Langlois</div>
+							<div id="gianttigerStoreCity">Valleyfield,QC</div>
+							<div id="gianttigerZipCode">J6S 1E3</div>
+							<div id="gianttigerPhone">613-526-2416</div>
+							<div class="dl-opentoday">Open today 8:00am - 9:00pm</div>
+							<a class="dl-holidayhours">See store details for holiday hours.</a>				
+						</div>
+						<div class="changeStore">
+							<form class="form">
+							  <div class="form-group">
+								  <div class="input-group">
+									<div class="store-container">
+										<input type="text" class="form-control" id="storesID" placeholder="Enter Postal Code" maxlength="7">
+									</div>
+									<span class="input-group-btn">
+										<button type="submit" class="primary-btn ml-change-store">CHANGE STORE</button>
+									</span>
+								  </div>
+							  </div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="utility-wrapper">
+				<ul>
+					<li class="mz-utilitynav-item gt-vip"><a href="#"><img src="/resources/images/GT-VIP.png" alt=""></a></li>
+					<li class="mz-utilitynav-item flyer-item"><a href="#">FLYER</a></li>
+					<li class="mz-utilitynav-item country-selector"><a href="#" class="item-lang">FR</a></li>
+				</ul>
+			</div>
+			
+		</div>
+
       <ul class="mz-sitenav-list"
           data-mz-contextify='.mz-sitenav-link[href="{{ navigation.currentNode.url }}"]'
           data-mz-contextify-attr='class'
@@ -8,7 +54,7 @@
           {% partial_cache %}
           {% for link in navigation.tree %}
             {% if not link.isHidden and not link.isEmpty and forloop.counter0 < themeSettings.maxTopLevelNavItems and link.url != "/home" and link.nodeType!="page" %}
-            <li class="mz-sitenav-item">
+            <li class="mz-sitenav-item{% if link.items %} has-subitems{% endif %}">
               <div class="mz-sitenav-item-inner">
                 <a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{link.url}}">{{link.name|truncatechars(themeSettings.maxTopLevelNavLabelLength)|safe}}</a>
                 {% if link.items %}
@@ -23,17 +69,16 @@
 									{% with "id eq {0}"|string_format(subsublink.originalId) as filter %}
 										{% include_entities "modules/category-header-attribute" listFQN=themeSettings.categoryEntityName filter=filter %}
 									{% endwith %}
-									<div class="mz-sitenav-link-wrapper">
-										<a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|safe }}</a>
-									</div>
-										
-									{% for subsubsublink in subsublink.items %}  
-										{% if not subsubsublink.isHidden and not subsubsublink.isEmpty %}
-										<div class="sub-sub-level-li">
-											<a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsubsublink.url}}">{{ subsubsublink.name|safe }}</a>
-										</div>
-										{% endif %}
-									{% endfor %}
+									<span class="mz-sitenav-link-wrapper">
+										<a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|safe }}</a>										
+									</span>
+										{% for subsubsublink in subsublink.items %}  
+											{% if not subsubsublink.isHidden and not subsubsublink.isEmpty %}
+											<div class="sub-sub-level-li">
+												<a class="mz-sitenav-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsubsublink.url}}">{{ subsubsublink.name|safe }}</a>
+											</div>
+											{% endif %}
+										{% endfor %}
 								</div>
 								{% endif %}
 							{% endfor %}
