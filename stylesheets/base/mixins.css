@@ -1,0 +1,173 @@
+.clear {
+  clear: both;
+}
+.customCheckbox {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.customCheckbox:checked + label::after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.customCheckbox ~ label {
+  color: #000000;
+  cursor: pointer;
+  position: relative;
+  padding-left: 26px;
+}
+.customCheckbox ~ label:active::after {
+  background: #e6e6e6;
+}
+.customCheckbox ~ label::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-transition: 0.15s all ease-out;
+  transition: 0.15s all ease-out;
+}
+.customCheckbox ~ label::after {
+  content: "";
+  background: #000000 no-repeat;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 10px;
+  width: 10px;
+  border-radius: 0 !important;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: 0.35s all linear;
+  transition: 0.35s all linear;
+}
+.customInput {
+  position: relative;
+  height: 40px;
+  width: 50%;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  border: 2px solid #d6d6d6;
+  border-radius: 4px;
+  outline: none;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  text-align: left;
+  color: #333333;
+  z-index: 2;
+}
+.customInput::-webkit-input-placeholder {
+  color: #999999;
+  font-size: 11px;
+}
+.customInput::-moz-placeholder {
+  color: #999999;
+  font-size: 11px;
+}
+.customInput:-ms-input-placeholder {
+  color: #999999;
+  font-size: 11px;
+}
+.customInput::-ms-input-placeholder {
+  color: #999999;
+  font-size: 11px;
+}
+.customInput::placeholder {
+  color: #999999;
+  font-size: 11px;
+}
+.customButton {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  height: 44px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  background: #ededed;
+  color: #000000;
+}
+.customButton.primary-button {
+  width: 50%;
+  background: #ffd204;
+}
+.customButton.primary-button:hover {
+  cursor: pointer;
+  background: #000000;
+  color: #ffd204;
+}
+.customButton.secondary-button-large {
+  width: 50%;
+  background: #ededed;
+  text-transform: none;
+}
+.customButton.secondary-button-small {
+  width: 25%;
+  background: #ededed;
+}
+.customButton.secondary-button-large:hover,
+.customButton.secondary-button-small:hover {
+  cursor: pointer;
+  color: #ededed;
+  background: #000000;
+}
+.customTextarea {
+  width: 50%;
+  height: 90px;
+  padding-left: 7px;
+  border-radius: 4px;
+  border: 2px solid #d6d6d6;
+  background-color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.64;
+  letter-spacing: normal;
+  resize: none;
+}
+.customDropdown {
+  position: relative;
+  height: 40px;
+  padding-left: 23px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666666;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 1;
+  background: url(../resources/images/icons/arrow-down-solid.svg) no-repeat 97% 50% #fff;
+  background-size: 20px 10px;
+}
