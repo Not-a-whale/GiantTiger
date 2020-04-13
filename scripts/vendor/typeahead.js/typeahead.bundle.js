@@ -1294,6 +1294,7 @@
                         node: $suggestions[0],
                         pattern: query
                     });
+                    console.log($suggestions);
                     return $suggestions;
 
                     function getSuggestionNode(suggestion) {

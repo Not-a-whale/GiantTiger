@@ -19,7 +19,7 @@
 			<div class="dl-opentoday">Open today 8:00am - 9:00pm</div>
 			<a class="dl-holidayhours">See store details for holiday hours.</a>				
 		</div>
-		<div class="changeStore">
+<!-- 		<div class="changeStore">
 			<form class="form">
 			  <div class="form-group">
 				  <div class="input-group">
@@ -32,7 +32,7 @@
 				  </div>
 			  </div>
 			</form>
-		</div>
+		</div> -->
 
 
 
