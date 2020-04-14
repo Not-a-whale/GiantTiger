@@ -28,7 +28,7 @@
             justify-content: space-between;
             width: 100%;
             height: calc(100% - 52px);
-            margin: 15px;
+            margin: 5px;
             background-color: #fff;
             text-align: left;
             
@@ -57,18 +57,22 @@
             justify-content: space-between;
             align-items: center;
             height: 52px;
-            background-color: #ededed;
             margin: 5px;
+            background-color: #ededed;
 
             p {
-                margin-left: 12px;
+                margin-left: 29px;
                 text-transform: uppercase;
+
+                @media (max-width: 993px) {
+                    margin-left: 6px;
+                }
             }
 
             button {
                 width: 114px !important;
                 height: 31px;
-                margin-right: 15px;
+                margin-right: 11px;
                 border: none;
                 font-family: Roboto, sans-serif;
                 font-weight: bold;
@@ -159,13 +163,17 @@
                 }
     
                 .mz-itemlisting-title {
-                    width: 100%;
+                    width: 80%;
                     font-size: @fontSizeLarger;
                     font-weight: 500;
                     line-height: 1.7;
                     font-size: 12px;
                     text-align: left;
                     .permalink(#333);
+
+                    @media screen and (max-width: 993px) {
+                        font-size: 15px;
+                    }
 
                     &:hover {
                         cursor: pointer;

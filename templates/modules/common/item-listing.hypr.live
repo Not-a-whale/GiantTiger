@@ -4,10 +4,10 @@
             <p>Related Search Results</p>
         </div>
         <div class="seach__results">
-            <a href="#" class="results__link">blouse</a>
-            <a href="#" class="results__link">blouses</a>
-            <a href="#" class="results__link">ladies blouses</a>
-            <a href="#" class="results__link">women blouses</a>
+            <a href="#" class="results__link">Link 1</a>
+            <a href="#" class="results__link">Link 2</a>
+            <a href="#" class="results__link">Link 3</a>
+            <a href="#" class="results__link">Link 4</a>
         </div>
     </div>
     <div class="popup__main">
